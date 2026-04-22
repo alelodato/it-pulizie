@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: #f5fafd;
+  color: #1a3f6f;
+  overflow-x: hidden;
+}
+
+@keyframes waveMove {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.wave-animate {
+  animation: waveMove 12s linear infinite;
+}
+
+.wave-animate-slow {
+  animation: waveMove 18s linear infinite reverse;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 1s ease both;
+}
+
+.sidenav-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #1a3f6f;
+  font-family: 'Hammersmith One', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 8px 18px 8px 14px;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-left: 3px solid transparent;
+  border-radius: 6px 0 0 6px;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  transform: translateX(calc(100% - 12px));
+}
+
+.sidenav-link:hover,
+.sidenav-link.active {
+  transform: translateX(0);
+  border-left-color: #4db8d4;
+  background: rgba(255, 255, 255, 0.92);
+  color: #4db8d4;
+}
+
+.sidenav-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4db8d4;
+  flex-shrink: 0;
+}
