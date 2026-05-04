@@ -1,6 +1,8 @@
 import SideNav from '@/components/SideNav'
 import RevealWrapper from '@/components/RevealWrapper'
 import PreventivoForm from '@/components/PreventivoForm'
+import ServiziTabs from '@/components/ServiziTabs'
+import Image from 'next/image'
 
 const servizi = [
   { icon: '🏢', titolo: 'Condomini', desc: 'Pulizia e manutenzione degli spazi comuni, scale, ingressi e aree condominiali con interventi programmati e costanti.' },
@@ -29,7 +31,6 @@ const distingue = [
 const contatti = [
   { icon: '📞', label: 'Telefono', value: '+39 333 7382823' },
   { icon: '✉️', label: 'Email', value: 'itpulizie.info@gmail.com' },
-  { icon: '📍', label: 'Sede', value: 'Via Sofia, 10 – Pomezia, 00071 (RM)' },
 ]
 
 export default function Home() {
@@ -43,6 +44,18 @@ export default function Home() {
         className="relative min-h-screen flex items-center justify-center overflow-hidden"
         style={{ background: 'linear-gradient(160deg, #dff3fa 0%, #b6e3f0 40%, #e8f7fc 100%)' }}
       >
+        {/* Immagine di sfondo */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero.jpg"
+            alt="Pulizia professionale"
+            fill
+            className="object-cover opacity-10"
+            priority
+          />
+        </div>
+
+        {/* Onde SVG */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <svg className="wave-animate absolute bottom-[-20px] w-[200%] opacity-35" viewBox="0 0 1440 200" xmlns="http://www.w3.org/2000/svg">
             <path fill="#4db8d4" d="M0,80 C240,140 480,20 720,80 C960,140 1200,20 1440,80 L1440,200 L0,200 Z" />
@@ -53,15 +66,14 @@ export default function Home() {
           </svg>
         </div>
 
+        {/* Contenuto */}
         <div className="relative z-10 text-center px-6 fade-up">
-          <div className="inline-flex items-center gap-3 mb-8">
-            <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="26" cy="26" r="26" fill="#1a3f6f" />
-              <path d="M14 34 C14 24 22 16 26 16 C30 16 38 24 38 34" stroke="#4db8d4" strokeWidth="2.5" strokeLinecap="round" fill="none" />
-              <ellipse cx="26" cy="34" rx="6" ry="4" fill="#4db8d4" fillOpacity="0.7" />
-              <rect x="23" y="28" width="6" height="10" rx="3" fill="white" />
-            </svg>
-            <span className="font-heading text-3xl text-blu tracking-wide">I.T. Pulizie</span>
+          <div className="inline-flex items-center gap-3 mb-2">
+            <img
+              src="/it-pulizie-logo.png"
+              alt="I.T. Pulizie logo"
+              className="h-48 w-auto"
+            />
           </div>
 
           <h1 className="font-heading text-blu leading-[1.1] mb-5" style={{ fontSize: 'clamp(2.4rem, 6vw, 4.8rem)' }}>
@@ -77,19 +89,12 @@ export default function Home() {
 
           <a
             href="#preventivo"
-            className="inline-block bg-blu text-white font-heading text-sm tracking-[0.1em] uppercase px-9 py-4 rounded-full shadow-[0_8px_24px_rgba(26,63,111,0.25)] hover:bg-celeste hover:shadow-[0_8px_28px_rgba(77,184,212,0.4)] hover:-translate-y-0.5 transition-all duration-300"
+            className="inline-block bg-blu text-white font-heading text-sm tracking-[0.1em] uppercase px-9 py-4 my-4 rounded-full shadow-[0_8px_24px_rgba(26,63,111,0.25)] hover:bg-celeste hover:shadow-[0_8px_28px_rgba(77,184,212,0.4)] hover:-translate-y-0.5 transition-all duration-300"
           >
             Richiedi una valutazione gratuita
           </a>
         </div>
       </section>
-
-      {/* WAVE DIVIDER */}
-      <div className="w-full overflow-hidden leading-none" style={{ background: '#f5fafd' }}>
-        <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" style={{ background: 'linear-gradient(160deg,#dff3fa,#e8f7fc)' }}>
-          <path fill="#f5fafd" d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" />
-        </svg>
-      </div>
 
       {/* CHI SIAMO */}
       <div style={{ background: 'linear-gradient(170deg, #e5f6fb 0%, #f0fafd 100%)' }}>
@@ -128,21 +133,10 @@ export default function Home() {
       <RevealWrapper>
         <section id="servizi" className="max-w-5xl mx-auto px-6 py-24">
           <p className="font-heading text-[0.72rem] tracking-[0.2em] uppercase text-celeste mb-3">Servizi</p>
-          <h2 className="font-heading text-blu leading-tight mb-12" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}>
+          <h2 className="font-heading text-blu leading-tight mb-10" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}>
             Cosa facciamo.
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {servizi.map(({ icon, titolo, desc }) => (
-              <div
-                key={titolo}
-                className="bg-white rounded-2xl p-8 shadow-[0_4px_20px_rgba(26,63,111,0.07)] border-t-4 border-celeste-light hover:border-celeste hover:-translate-y-1.5 hover:shadow-[0_12px_32px_rgba(26,63,111,0.12)] transition-all duration-300"
-              >
-                <div className="text-3xl mb-4">{icon}</div>
-                <h3 className="font-heading text-blu text-lg mb-2">{titolo}</h3>
-                <p className="font-body font-light text-site-gray text-sm leading-relaxed">{desc}</p>
-              </div>
-            ))}
-          </div>
+          <ServiziTabs />
         </section>
       </RevealWrapper>
 
@@ -244,8 +238,13 @@ export default function Home() {
       </div>
 
       {/* FOOTER */}
-      <footer className="bg-[#0f2644] text-white/40 text-center py-8 px-6 font-heading text-xs tracking-[0.08em]">
-        WWW.ITPULIZIE.IT &nbsp;·&nbsp; Via Sofia, 10 – Pomezia (RM) &nbsp;·&nbsp; © 2025 I.T. Pulizie
+      <footer className="bg-[#0f2644] text-white/40 text-center pb-8 px-6 font-heading text-xs tracking-[0.08em]">
+        <img
+          src="/it-pulizie-logo2.png"
+          alt="I.T. Pulizie"
+          className="h-60 w-auto mx-auto opacity-60"
+        />
+        WWW.ITPULIZIE.IT &nbsp;·&nbsp; Via Sofia, 10 – Pomezia (RM) &nbsp;·&nbsp; ©️ 2026 I.T. Pulizie
       </footer>
     </>
   )
