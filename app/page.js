@@ -5,7 +5,7 @@ import ServiziTabs from '@/components/ServiziTabs'
 import Image from 'next/image'
 
 const servizi = [
-  { icon: '🏢', titolo: 'Condomini', desc: 'Pulizia e manutenzione degli spazi comuni, scale, ingressi e aree condominiali con interventi programmati e costanti.' },
+  { icon: '🏢', titolo: 'Condomini', desc: 'Pulizia e manutenzione condominiale, scale, ingressi e aree condominiali con interventi programmati e costanti.' },
   { icon: '🏗️', titolo: 'Post Cantiere', desc: 'Sgrossi e rifiniture dopo lavori edili. Ambienti riconsegnati puliti, sicuri e pronti all\'uso.' },
   { icon: '🏠', titolo: 'Uffici e Ambienti', desc: 'Servizi di pulizia per ambienti di lavoro, con pianificazione su misura e attenzione alle superfici più utilizzate.' },
   { icon: '✨', titolo: 'Pavimentazioni', desc: 'Trattamenti professionali per ogni tipo di pavimento. Pulizia profonda, lucidatura e manutenzione.' },
@@ -16,15 +16,15 @@ const servizi = [
 const distingue = [
   {
     titolo: 'Pianificazione su misura',
-    desc: 'Il servizio viene strutturato in base alle caratteristiche reali dello stabile, non su schemi standard.',
+    desc: 'Ogni intervento viene definito in base alle caratteristiche dello stabile, alle frequenze necessarie e alle esigenze specifiche dell’ambiente.',
   },
   {
     titolo: 'Attrezzature professionali',
-    desc: 'Operiamo con macchinari e prodotti professionali, scelti in base al tipo di superficie e all\'ambiente.',
+    desc: 'Utilizziamo prodotti e macchinari professionali selezionati in base alle superfici e al tipo di intervento da eseguire.',
   },
   {
     titolo: 'Personale formato',
-    desc: 'Il nostro staff è abituato a operare in contesti diversi, con un approccio flessibile e puntuale.',
+    desc: 'Il nostro staff opera con metodo, precisione e continuità, adattandosi a contesti diversi con un approccio pratico e organizzato.',
   },
 ]
 
@@ -84,7 +84,7 @@ export default function Home() {
 
           <p className="font-body font-light text-site-gray text-lg max-w-lg mx-auto mb-10 leading-relaxed">
             Interventi programmati, attrezzature professionali e un servizio costruito
-            sulle esigenze reali del tuo spazio. Con sede a Pomezia, operiamo in tutta la provincia di Roma.
+            sulle esigenze reali del tuo spazio. Operiamo in tutta la provincia di Roma.
           </p>
 
           <a
@@ -108,8 +108,8 @@ export default function Home() {
                 </h2>
                 <p className="font-body font-light text-site-gray leading-relaxed mb-4">
                   IT Pulizie offre servizi di pulizia professionale per condomini, uffici e ambienti civili.
-                  Lavoriamo su interventi programmati, con una struttura stabile pensata per mantenere
-                  gli spazi in condizioni costanti di ordine e pulizia.
+                  Gestiamo interventi programmati con continuità, mantenendo gli spazi ordinati, puliti e curati nel tempo.
+                  Ogni servizio viene organizzato in base alle reali esigenze dello stabile, con attenzione alla puntualità, alla gestione operativa e alla qualità del risultato.
                 </p>
                 <p className="font-body font-light text-site-gray leading-relaxed">
                   Disponibili per sopralluogo e valutazione senza impegno.
@@ -174,6 +174,8 @@ export default function Home() {
             </p>
             <h2 className="font-heading text-blu leading-tight mb-10 text-center" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}>
               Richiedici una valutazione.
+              < br />
+              Inserisci le informazioni richieste per ricevere un preventivo gratuito e senza impegno.
             </h2>
             <div className="bg-white rounded-[20px] px-8 py-12 sm:px-12 shadow-[0_8px_40px_rgba(26,63,111,0.1)] max-w-2xl mx-auto">
               <PreventivoForm />
@@ -187,10 +189,11 @@ export default function Home() {
         <section id="contatti" className="max-w-5xl mx-auto px-6 py-24">
           <p className="font-heading text-[0.72rem] tracking-[0.2em] uppercase text-celeste mb-3">Contatti</p>
           <h2 className="font-heading text-blu leading-tight mb-4" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}>
-            Siamo a tua disposizione.
+            Richiedi un sopralluogo o una valutazione.
           </h2>
           <p className="font-body font-light text-site-gray leading-relaxed mb-10 max-w-lg">
-            Contattaci per un sopralluogo o una valutazione senza impegno. Rispondiamo entro poche ore.
+            Siamo disponibili per valutare le esigenze dello stabile e organizzare un sopralluogo senza impegno.
+            Ti risponderemo nel più breve tempo possibile con tutte le informazioni necessarie.
           </p>
           <div className="flex flex-wrap gap-9">
             {contatti.map(({ icon, label, value }) => (

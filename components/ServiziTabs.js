@@ -8,11 +8,11 @@ const servizi = [
         tab: 'Condomini',
         icon: '🏢',
         titolo: 'Pulizia e manutenzione condominiale',
-        desc: 'Manteniamo gli spazi comuni del tuo condominio in condizioni costanti di ordine e pulizia. Scale, ingressi, androni, ascensori e aree comuni trattati con regolarità e professionalità.',
+        desc: 'Gestiamo la pulizia e il mantenimento degli spazi comuni con interventi programmati e continui.Scale, ingressi, androni, ascensori e aree condivise vengono trattati con attenzione e regolarità.',
         punti: [
-            'Interventi programmati su misura',
-            'Pulizia scale, ingressi e androni',
-            'Manutenzione ascensori e aree comuni',
+            'Interventi programmati in base alle esigenze dello stabile',
+            'Pulizia di scale, ingressi, androni e ascensori',
+            'Cura delle aree comuni interne ed esterne',
             'Controllo costante delle condizioni generali',
         ],
         img: '/images/condomini.jpg',
@@ -21,11 +21,11 @@ const servizi = [
         tab: 'Uffici',
         icon: '🏠',
         titolo: 'Pulizia per ambienti di lavoro',
-        desc: 'Servizi strutturati per uffici e ambienti professionali. Pianificazione degli interventi costruita sulle esigenze operative della struttura, con attenzione alle superfici più utilizzate.',
+        desc: 'Servizi di pulizia organizzati per uffici e ambienti professionali, con interventi pianificati in base agli orari e alle necessità operative della struttura.',
         punti: [
             'Pulizia quotidiana o periodica',
-            'Attenzione alle zone di passaggio e contatto',
-            'Prodotti professionali adatti agli ambienti civili',
+            'Attenzione alle superfici e alle zone di maggiore utilizzo',
+            'Utilizzo di prodotti professionali adatti agli ambienti civili',
             'Flessibilità negli orari di intervento',
         ],
         img: '/images/uffici.jpg',
@@ -33,52 +33,26 @@ const servizi = [
     {
         tab: 'Post Cantiere',
         icon: '🏗️',
-        titolo: 'Sgrossi e rifiniture post-lavori',
-        desc: 'Pulizia professionale dopo lavori edili o ristrutturazioni. Rimuoviamo polvere, residui e detriti, restituendo gli ambienti puliti, sicuri e pronti all\'uso.',
+        titolo: 'Sgrossi e pulizie post-lavori',
+        desc: 'Interventi dedicati alla pulizia di ambienti dopo lavori edili o ristrutturazioni.Rimuoviamo polvere, residui e sporco da cantiere per riconsegnare spazi puliti e pronti all’uso.',
         punti: [
-            'Rimozione polvere e residui da costruzione',
-            'Pulizia profonda di superfici e pavimenti',
-            'Trattamento infissi, vetri e serramenti',
-            'Smaltimento materiali di risulta leggeri',
+            'Rimozione polvere e residui da lavorazionei edili',
+            'Pulizia profonda di pavimenti e superfici',
+            'Trattamento vetri, infissi e serramenti',
+            'Rimozione di polvere e residui superficiali da lavorazione edile',
         ],
         img: '/images/post-cantiere.jpg',
-    },
-    {
-        tab: 'Pavimentazioni',
-        icon: '✨',
-        titolo: 'Trattamenti professionali per pavimenti',
-        desc: 'Trattamenti specifici per ogni tipo di pavimentazione. Dalla pulizia profonda alla lucidatura, fino alla manutenzione periodica per mantenere le superfici in condizioni ottimali.',
-        punti: [
-            'Lavaggio e sanificazione profonda',
-            'Lucidatura e cristallizzazione',
-            'Trattamenti protettivi anti-macchia',
-            'Adatto a marmo, gres, parquet e altro',
-        ],
-        img: '/images/pavimentazioni.jpg',
-    },
-    {
-        tab: 'Aree Verdi',
-        icon: '🌿',
-        titolo: 'Gestione aree verdi',
-        desc: 'Cura e manutenzione delle aree verdi condominiali e private. Un servizio continuativo per mantenere gli spazi esterni ordinati e curati durante tutto l\'anno.',
-        punti: [
-            'Sfalcio erba e potatura siepi',
-            'Pulizia e raccolta foglie stagionale',
-            'Manutenzione periodica programmata',
-            'Cura di giardini condominiali e privati',
-        ],
-        img: '/images/aree-verdi.jpg',
     },
     {
         tab: 'Garage',
         icon: '🚗',
         titolo: 'Garage e aree esterne',
-        desc: 'Pulizia di garage, parcheggi coperti e spazi esterni con attrezzature e macchinari specifici. Interventi puntuali o programmati in base alle esigenze.',
+        desc: 'Pulizia di garage, parcheggi coperti e spazi esterni con attrezzature professionali adatte a superfici ad alto utilizzo.',
         punti: [
-            'Lavaggio pavimentazioni con macchinari',
-            'Pulizia corsie, box e aree di manovra',
-            'Rimozione oli e macchie persistenti',
-            'Interventi straordinari su richiesta',
+            'Lavaggio pavimentazioni con macchinari professionali',
+            'Pulizia di corsie, box e aree di manovra',
+            'Rimozione di macchie, oli e sporco persistente',
+            'Interventi programmati o straordinari su richiesta',
         ],
         img: '/images/garage.jpg',
     },
@@ -98,8 +72,8 @@ export default function ServiziTabs() {
                             key={item.tab}
                             onClick={() => setActive(i)}
                             className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-heading text-xs tracking-[0.1em] uppercase whitespace-nowrap transition-all duration-300 ${active === i
-                                    ? 'bg-blu text-white shadow-[0_4px_16px_rgba(26,63,111,0.25)]'
-                                    : 'bg-white text-site-gray border border-celeste-light hover:border-celeste hover:text-blu'
+                                ? 'bg-blu text-white shadow-[0_4px_16px_rgba(26,63,111,0.25)]'
+                                : 'bg-white text-site-gray border border-celeste-light hover:border-celeste hover:text-blu'
                                 }`}
                         >
                             <span>{item.icon}</span>
