@@ -41,18 +41,81 @@ export default function Home() {
       {/* HERO */}
       <section
         id="home"
-        className="relative min-h-screen flex items-center justify-center overflow-hidden"
+        className="relative flex flex-col overflow-hidden"
         style={{ background: 'linear-gradient(160deg, #dff3fa 0%, #b6e3f0 40%, #e8f7fc 100%)' }}
       >
-        {/* Immagine di sfondo */}
-        <div className="absolute inset-0">
-          <Image
-            src="/images/hero.jpg"
-            alt="Pulizia professionale"
-            fill
-            className="object-cover opacity-10"
-            priority
-          />
+        {/* Top bar */}
+        <div className="hidden md:flex relative z-10 w-full border-b border-celeste-light/50 bg-white/30 backdrop-blur-sm">
+          <div className="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between gap-4 flex-wrap">
+            {/* Contatti */}
+            <div className="flex items-center gap-6 flex-wrap">
+              <a
+                href="tel:+393337382823"
+                className="flex items-center gap-2 font-heading text-[0.68rem] tracking-[0.1em] uppercase text-blu hover:text-celeste transition-colors"
+              >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                +39 333 7382823
+              </a>
+              <a
+                href="mailto:itpulizie.info@gmail.com"
+                className="flex items-center gap-2 font-heading text-[0.68rem] tracking-[0.1em] uppercase text-blu hover:text-celeste transition-colors"
+              >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect width="20" height="16" x="2" y="4" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+                itpulizie.info@gmail.com
+              </a>
+              <span className="hidden sm:flex items-center gap-2 font-heading text-[0.68rem] tracking-[0.1em] uppercase text-blu">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                Roma e Provincia
+              </span>
+            </div>
+
+            {/* Social */}
+            <div className="flex items-center gap-3">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-7 h-7 rounded-full bg-white/60 flex items-center justify-center text-blu hover:bg-celeste hover:text-white transition-all duration-300"
+                aria-label="Facebook"
+              >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg>
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-7 h-7 rounded-full bg-white/60 flex items-center justify-center text-blu hover:bg-celeste hover:text-white transition-all duration-300"
+                aria-label="Instagram"
+              >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                </svg>
+              </a>
+              <a
+                href="https://wa.me/393337382823"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-7 h-7 rounded-full bg-white/60 flex items-center justify-center text-blu hover:bg-celeste hover:text-white transition-all duration-300"
+                aria-label="WhatsApp"
+              >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* Onde SVG */}
@@ -67,60 +130,73 @@ export default function Home() {
         </div>
 
         {/* Contenuto */}
-        <div className="relative z-10 text-center px-6 fade-up">
-          <div className="inline-flex items-center gap-3 mb-2">
-            <img
-              src="/it-pulizie-logo.png"
-              alt="I.T. Pulizie logo"
-              className="h-48 w-auto"
-            />
+        <div className="relative z-10 flex-1 flex items-center justify-center text-center px-6 py-16 fade-up">
+          <div>
+            <div className="inline-flex items-center gap-3 mb-4">
+              <img
+                src="/it-pulizie-logo.png"
+                alt="I.T. Pulizie logo"
+                className="h-32 w-auto"
+              />
+            </div>
+
+            <h1 className="font-heading text-blu leading-[1.1] mb-4" style={{ fontSize: 'clamp(1.8rem, 4.5vw, 3.6rem)' }}>
+              Pulizia professionale<br />
+              <span className="text-celeste">per condomini,</span><br />
+              uffici e ambienti civili.
+            </h1>
+
+            <p className="font-body font-light text-site-gray text-base max-w-md mx-auto mb-8 leading-relaxed">
+              Interventi programmati, attrezzature professionali e un servizio costruito
+              sulle esigenze reali del tuo spazio. Operiamo in tutta la provincia di Roma.
+            </p>
+
+            <a
+              href="#preventivo"
+              className="inline-block bg-blu text-white font-heading text-sm tracking-[0.1em] uppercase px-9 py-4 rounded-full shadow-[0_8px_24px_rgba(26,63,111,0.25)] hover:bg-celeste hover:shadow-[0_8px_28px_rgba(77,184,212,0.4)] hover:-translate-y-0.5 transition-all duration-300"
+            >
+              Richiedi una valutazione gratuita
+            </a>
           </div>
-
-          <h1 className="font-heading text-blu leading-[1.1] mb-5" style={{ fontSize: 'clamp(2.4rem, 6vw, 4.8rem)' }}>
-            Pulizia professionale<br />
-            <span className="text-celeste">per condomini,</span><br />
-            uffici e ambienti civili.
-          </h1>
-
-          <p className="font-body font-light text-site-gray text-lg max-w-lg mx-auto mb-10 leading-relaxed">
-            Interventi programmati, attrezzature professionali e un servizio costruito
-            sulle esigenze reali del tuo spazio. Operiamo in tutta la provincia di Roma.
-          </p>
-
-          <a
-            href="#preventivo"
-            className="inline-block bg-blu text-white font-heading text-sm tracking-[0.1em] uppercase px-9 py-4 my-4 rounded-full shadow-[0_8px_24px_rgba(26,63,111,0.25)] hover:bg-celeste hover:shadow-[0_8px_28px_rgba(77,184,212,0.4)] hover:-translate-y-0.5 transition-all duration-300"
-          >
-            Richiedi una valutazione gratuita
-          </a>
         </div>
       </section>
 
       {/* CHI SIAMO */}
-      <div style={{ background: 'linear-gradient(170deg, #e5f6fb 0%, #f0fafd 100%)' }}>
+      <div className="relative overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/bg-1.webp"
+            alt=""
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/90" />
+        </div>
+
         <RevealWrapper>
-          <section id="chi-siamo" className="max-w-5xl mx-auto px-6 py-24">
+          <section id="chi-siamo" className="relative z-10 max-w-5xl mx-auto px-6 py-24">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
               <div>
                 <p className="font-heading text-[0.72rem] tracking-[0.2em] uppercase text-celeste mb-3">Chi siamo</p>
-                <h2 className="font-heading text-blu leading-tight mb-5" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}>
+                <h2 className="font-heading text-white leading-tight mb-5" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}>
                   Una struttura stabile,<br />un servizio costante.
                 </h2>
-                <p className="font-body font-light text-site-gray leading-relaxed mb-4">
+                <p className="font-body font-light text-white leading-relaxed mb-4">
                   IT Pulizie offre servizi di pulizia professionale per condomini, uffici e ambienti civili.
                   Gestiamo interventi programmati con continuità, mantenendo gli spazi ordinati, puliti e curati nel tempo.
                   Ogni servizio viene organizzato in base alle reali esigenze dello stabile, con attenzione alla puntualità, alla gestione operativa e alla qualità del risultato.
                 </p>
-                <p className="font-body font-light text-site-gray leading-relaxed">
+                <p className="font-body font-light text-white/75 leading-relaxed">
                   Disponibili per sopralluogo e valutazione senza impegno.
                 </p>
               </div>
 
               <div className="flex flex-col gap-6">
                 {distingue.map(({ titolo, desc }) => (
-                  <div key={titolo} className="border-l-[3px] border-celeste-light pl-5">
-                    <strong className="font-heading text-blu block mb-1 text-base">{titolo}</strong>
-                    <span className="font-body font-light text-site-gray text-sm leading-relaxed">{desc}</span>
+                  <div key={titolo} className="border-l-[3px] border-celeste pl-5">
+                    <strong className="font-heading text-white block mb-1 text-base">{titolo}</strong>
+                    <span className="font-body font-light text-white/70 text-sm leading-relaxed">{desc}</span>
                   </div>
                 ))}
               </div>
@@ -140,14 +216,25 @@ export default function Home() {
         </section>
       </RevealWrapper>
 
-      {/* COME LAVORIAMO */}
-      <div style={{ background: 'linear-gradient(170deg, #e5f6fb 0%, #f0fafd 100%)' }}>
+      {/* COME LAVORIAMO + FORM */}
+      <div className="relative overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/bg-2.webp"
+            alt=""
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/75" />
+        </div>
+
         <RevealWrapper>
-          <section id="preventivo" className="max-w-5xl mx-auto px-6 py-24">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start mb-20">
+          <section id="preventivo" className="relative z-10 max-w-5xl mx-auto px-6 py-24">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 lg:gap-12 items-start mb-20">
               <div>
                 <p className="font-heading text-[0.72rem] tracking-[0.2em] uppercase text-celeste mb-3">Come lavoriamo</p>
-                <h2 className="font-heading text-blu leading-tight mb-5" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}>
+                <h2 className="font-heading text-white leading-tight mb-5" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}>
                   Metodo, precisione<br />e continuità.
                 </h2>
               </div>
@@ -160,7 +247,7 @@ export default function Home() {
                   'Macchinari specifici per spazi ampi o superfici esterne',
                   'Controllo costante delle condizioni generali degli spazi',
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 font-body font-light text-site-gray text-sm leading-relaxed">
+                  <li key={item} className="flex items-start gap-3 font-body font-light text-white/75 text-sm leading-relaxed">
                     <span className="text-celeste mt-0.5 flex-shrink-0">→</span>
                     {item}
                   </li>
@@ -172,12 +259,13 @@ export default function Home() {
             <p className="font-heading text-[0.72rem] tracking-[0.2em] uppercase text-celeste mb-3 text-center">
               Preventivo gratuito
             </p>
-            <h2 className="font-heading text-blu leading-tight mb-10 text-center" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}>
+            <h2 className="font-heading text-white leading-tight mb-4 text-center" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}>
               Richiedici una valutazione.
-              < br />
-              Inserisci le informazioni richieste per ricevere un preventivo gratuito e senza impegno.
             </h2>
-            <div className="bg-white rounded-[20px] px-8 py-12 sm:px-12 shadow-[0_8px_40px_rgba(26,63,111,0.1)] max-w-2xl mx-auto">
+            <p className="font-body font-light text-white/70 text-center max-w-lg mx-auto mb-10 text-sm leading-relaxed">
+              Inserisci le informazioni richieste per ricevere un preventivo gratuito e senza impegno.
+            </p>
+            <div className="bg-white rounded-[20px] px-8 py-12 sm:px-12 shadow-[0_8px_40px_rgba(0,0,0,0.2)] max-w-2xl mx-auto">
               <PreventivoForm />
             </div>
           </section>
@@ -217,9 +305,20 @@ export default function Home() {
       </RevealWrapper>
 
       {/* LAVORA CON NOI */}
-      <div className="bg-blu">
+      <div className="relative overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/bg-3.webp"
+            alt=""
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/85" />
+        </div>
+
         <RevealWrapper>
-          <section id="lavora" className="max-w-5xl mx-auto px-6 py-24">
+          <section id="lavora" className="relative z-10 max-w-5xl mx-auto px-6 py-24">
             <p className="font-heading text-[0.72rem] tracking-[0.2em] uppercase text-celeste-light mb-3">
               Lavora con noi
             </p>
@@ -241,13 +340,97 @@ export default function Home() {
       </div>
 
       {/* FOOTER */}
-      <footer className="bg-[#0f2644] text-white/40 text-center pb-8 px-6 font-heading text-xs tracking-[0.08em]">
-        <img
-          src="/it-pulizie-logo2.png"
-          alt="I.T. Pulizie"
-          className="h-60 w-auto mx-auto opacity-60"
-        />
-        WWW.ITPULIZIE.IT &nbsp;·&nbsp; Via Sofia, 10 – Pomezia (RM) &nbsp;·&nbsp; ©️ 2026 I.T. Pulizie
+      <footer className="border-t border-celeste-light/40 px-6 py-10">
+        <div className="max-w-5xl mx-auto flex flex-col gap-8">
+
+          {/* Logo + contatti + social sulla stessa riga */}
+          <div className="flex flex-col sm:flex-row items-center sm:items-center justify-between gap-6">
+
+            {/* Logo */}
+            <img
+              src="/it-pulizie-logo2.png"
+              alt="I.T. Pulizie"
+              className="h-48 w-auto opacity-80"
+            />
+
+            {/* Contatti */}
+            <div className="flex flex-wrap items-center justify-center gap-5">
+              <a
+                href="tel:+393337382823"
+                className="flex items-center gap-2 font-heading text-[0.68rem] tracking-[0.1em] uppercase text-blu hover:text-celeste transition-colors"
+              >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                +39 333 7382823
+              </a>
+              <a
+                href="mailto:itpulizie.info@gmail.com"
+                className="flex items-center gap-2 font-heading text-[0.68rem] tracking-[0.1em] uppercase text-blu hover:text-celeste transition-colors"
+              >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect width="20" height="16" x="2" y="4" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+                itpulizie.info@gmail.com
+              </a>
+              <span className="hidden sm:flex items-center gap-2 font-heading text-[0.68rem] tracking-[0.1em] uppercase text-blu">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                Via Sofia, 10 – Pomezia (RM)
+              </span>
+            </div>
+
+            {/* Social */}
+            <div className="flex items-center gap-3">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-full border border-celeste-light flex items-center justify-center text-blu hover:bg-celeste hover:border-celeste hover:text-white transition-all duration-300"
+                aria-label="Facebook"
+              >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg>
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-full border border-celeste-light flex items-center justify-center text-blu hover:bg-celeste hover:border-celeste hover:text-white transition-all duration-300"
+                aria-label="Instagram"
+              >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                </svg>
+              </a>
+              <a
+                href="https://wa.me/393337382823"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-full border border-celeste-light flex items-center justify-center text-blu hover:bg-celeste hover:border-celeste hover:text-white transition-all duration-300"
+                aria-label="WhatsApp"
+              >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          {/* Copyright */}
+          <div className="border-t border-celeste-light/40 pt-6 text-center">
+            <p className="font-heading text-[0.65rem] tracking-[0.1em] uppercase text-site-gray">
+              WWW.ITPULIZIE.IT &nbsp;·&nbsp; Via Sofia, 10 – Pomezia (RM) &nbsp;·&nbsp; © 2026 I.T. Pulizie
+            </p>
+          </div>
+
+        </div>
       </footer>
     </>
   )
