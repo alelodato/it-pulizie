@@ -15,7 +15,7 @@ const servizi = [
             'Cura delle aree comuni interne ed esterne',
             'Controllo costante delle condizioni generali',
         ],
-        img: '/images/condomini.jpg',
+        img: '/condomini.webp',
     },
     {
         tab: 'Uffici',
@@ -28,7 +28,7 @@ const servizi = [
             'Utilizzo di prodotti professionali adatti agli ambienti civili',
             'Flessibilità negli orari di intervento',
         ],
-        img: '/images/uffici.jpg',
+        img: '/ufficio.webp',
     },
     {
         tab: 'Post Cantiere',
@@ -41,7 +41,7 @@ const servizi = [
             'Trattamento vetri, infissi e serramenti',
             'Rimozione di polvere e residui superficiali da lavorazione edile',
         ],
-        img: '/images/post-cantiere.jpg',
+        img: '/post-cantiere.webp',
     },
     {
         tab: 'Garage',
@@ -54,7 +54,7 @@ const servizi = [
             'Rimozione di macchie, oli e sporco persistente',
             'Interventi programmati o straordinari su richiesta',
         ],
-        img: '/images/garage.jpg',
+        img: '/garage.webp',
     },
 ]
 

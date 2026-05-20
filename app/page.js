@@ -228,7 +228,7 @@ export default function Home() {
             </h2>
             <p className="font-body font-light text-white/70 leading-relaxed max-w-lg mb-10">
               Cerchiamo persone affidabili, precise e motivate. Se vuoi far parte di una realtà seria
-              e strutturata, inviaci il tuo curriculum — ti contatteremo appena possibile.
+              e strutturata, inviaci il tuo curriculum e ti contatteremo appena possibile.
             </p>
             <a
               href="mailto:itpulizie.info@gmail.com"
