@@ -31,6 +31,19 @@ const servizi = [
         img: '/ufficio.webp',
     },
     {
+        tab: 'Aree Verdi',
+        icon: '🌿',
+        titolo: 'Gestione aree verdi',
+        desc: 'Cura e manutenzione delle aree verdi condominiali e private. Un servizio continuativo per mantenere gli spazi esterni ordinati e curati durante tutto l\'anno.',
+        punti: [
+            'Sfalcio erba e potatura siepi',
+            'Pulizia e raccolta foglie stagionale',
+            'Manutenzione periodica programmata',
+            'Cura di giardini condominiali e privati',
+        ],
+        img: '/aree-verdi.webp',
+    },
+    {
         tab: 'Post Cantiere',
         icon: '🏗️',
         titolo: 'Sgrossi e pulizie post-lavori',
