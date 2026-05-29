@@ -168,7 +168,7 @@ export default function Home() {
             fill
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-black/85" />
+          <div className="absolute inset-0 bg-black/85 md:bg-black/90" />
         </div>
 
         <RevealWrapper>
