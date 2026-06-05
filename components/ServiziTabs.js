@@ -31,7 +31,7 @@ const servizi = [
         img: '/ufficio.webp',
     },
     {
-        tab: 'Commerciali',
+        tab: 'Ambienti Civili e Commerciali',
         icon: '🏪',
         titolo: 'Ambienti civili e commerciali',
         desc: 'Offriamo servizi di pulizia per attività commerciali, locali, strutture ricettive, spazi dedicati agli eventi e altri ambienti aperti al pubblico. Garantiamo interventi efficaci e ambienti sempre puliti, ordinati e accoglienti.',
@@ -138,7 +138,7 @@ export default function ServiziTabs() {
                             src={s.img}
                             alt={s.titolo}
                             fill
-                            className="object-cover"
+                            className="object-contain"
                             sizes="(max-width: 768px) 100vw, 50vw"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-blu/30 to-transparent" />
