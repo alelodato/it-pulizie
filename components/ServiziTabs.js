@@ -8,7 +8,7 @@ const servizi = [
         tab: 'Condomini',
         icon: '🏢',
         titolo: 'Pulizia e manutenzione condominiale',
-        desc: 'Gestiamo la pulizia e il mantenimento degli spazi comuni con interventi programmati e continui.Scale, ingressi, androni, ascensori e aree condivise vengono trattati con attenzione e regolarità.',
+        desc: 'Gestiamo la pulizia e il mantenimento degli spazi comuni con interventi programmati e continui. \nScale, ingressi, androni, ascensori e aree condivise vengono trattati con attenzione e regolarità.',
         punti: [
             'Interventi programmati in base alle esigenze dello stabile',
             'Pulizia di scale, ingressi, androni e ascensori',
@@ -31,6 +31,20 @@ const servizi = [
         img: '/ufficio.webp',
     },
     {
+        tab: 'Commerciali',
+        icon: '🏪',
+        titolo: 'Ambienti civili e commerciali',
+        desc: 'Offriamo servizi di pulizia per attività commerciali, locali, strutture ricettive, spazi dedicati agli eventi e altri ambienti aperti al pubblico. Garantiamo interventi efficaci e ambienti sempre puliti, ordinati e accoglienti.',
+        punti: [
+            'Pulizia di locali commerciali e attività aperte al pubblico',
+            'Interventi per strutture ricettive e spazi dedicati agli eventi',
+            'Utilizzo di attrezzature e prodotti professionali',
+            'Servizi programmati in base alle esigenze della struttura',
+            'Flessibilità negli orari e nella frequenza degli interventi',
+        ],
+        img: '/commerciali.webp',
+    },
+    {
         tab: 'Aree Verdi',
         icon: '🌿',
         titolo: 'Gestione aree verdi',
@@ -47,9 +61,8 @@ const servizi = [
         tab: 'Post Cantiere',
         icon: '🏗️',
         titolo: 'Sgrossi e pulizie post-lavori',
-        desc: 'Interventi dedicati alla pulizia di ambienti dopo lavori edili o ristrutturazioni.Rimuoviamo polvere, residui e sporco da cantiere per riconsegnare spazi puliti e pronti all’uso.',
+        desc: `Interventi dedicati alla pulizia di ambienti dopo lavori edili o ristrutturazioni.   Rimuoviamo polvere, residui e sporco da cantiere per riconsegnare spazi puliti e pronti all’uso.`,
         punti: [
-            'Rimozione polvere e residui da lavorazionei edili',
             'Pulizia profonda di pavimenti e superfici',
             'Trattamento vetri, infissi e serramenti',
             'Rimozione di polvere e residui superficiali da lavorazione edile',
