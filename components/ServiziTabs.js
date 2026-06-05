@@ -138,7 +138,7 @@ export default function ServiziTabs() {
                             src={s.img}
                             alt={s.titolo}
                             fill
-                            className="object-contain"
+                            className="object-cover"
                             sizes="(max-width: 768px) 100vw, 50vw"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-blu/30 to-transparent" />

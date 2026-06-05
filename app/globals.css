@@ -94,3 +94,14 @@ body {
   background: #4db8d4;
   flex-shrink: 0;
 }
+
+.overflow-x-auto::webkit scrollbar {
+  display: none;
+}
+
+.overflow-x-auto {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
