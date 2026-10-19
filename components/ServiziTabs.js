@@ -1,14 +1,15 @@
 'use client'
 
+import { FaBuilding, FaLaptop, FaStore, FaLeaf, FaHardHat, FaCar } from 'react-icons/fa'
 import { useState } from 'react'
 import Image from 'next/image'
 
 const servizi = [
     {
         tab: 'Condomini',
-        icon: '🏢',
+        icon: <FaBuilding size={16} className="text-celeste" />,
         titolo: 'Pulizia e manutenzione condominiale',
-        desc: 'Gestiamo la pulizia e il mantenimento degli spazi comuni con interventi programmati e continui. \nScale, ingressi, androni, ascensori e aree condivise vengono trattati con attenzione e regolarità.',
+        desc: 'Gestiamo la pulizia e il mantenimento degli spazi comuni con interventi programmati e continui. Scale, ingressi, androni, ascensori e aree condivise vengono trattati con attenzione e regolarità.',
         punti: [
             'Interventi programmati in base alle esigenze dello stabile',
             'Pulizia di scale, ingressi, androni e ascensori',
@@ -19,7 +20,7 @@ const servizi = [
     },
     {
         tab: 'Uffici',
-        icon: '🏠',
+        icon: <FaLaptop size={16} className="text-celeste" />,
         titolo: 'Pulizia per ambienti di lavoro',
         desc: 'Servizi di pulizia organizzati per uffici e ambienti professionali, con interventi pianificati in base agli orari e alle necessità operative della struttura.',
         punti: [
@@ -32,7 +33,7 @@ const servizi = [
     },
     {
         tab: 'Ambienti Civili e Commerciali',
-        icon: '🏪',
+        icon: <FaStore size={16} className="text-celeste" />,
         titolo: 'Ambienti civili e commerciali',
         desc: 'Offriamo servizi di pulizia per attività commerciali, locali, strutture ricettive, spazi dedicati agli eventi e altri ambienti aperti al pubblico. Garantiamo interventi efficaci e ambienti sempre puliti, ordinati e accoglienti.',
         punti: [
@@ -46,7 +47,7 @@ const servizi = [
     },
     {
         tab: 'Aree Verdi',
-        icon: '🌿',
+        icon: <FaLeaf size={16} className="text-celeste" />,
         titolo: 'Gestione aree verdi',
         desc: 'Cura e manutenzione delle aree verdi condominiali e private. Un servizio continuativo per mantenere gli spazi esterni ordinati e curati durante tutto l\'anno.',
         punti: [
@@ -59,9 +60,9 @@ const servizi = [
     },
     {
         tab: 'Post Cantiere',
-        icon: '🏗️',
+        icon: <FaHardHat size={16} className="text-celeste" />,
         titolo: 'Sgrossi e pulizie post-lavori',
-        desc: `Interventi dedicati alla pulizia di ambienti dopo lavori edili o ristrutturazioni.   Rimuoviamo polvere, residui e sporco da cantiere per riconsegnare spazi puliti e pronti all’uso.`,
+        desc: 'Interventi dedicati alla pulizia di ambienti dopo lavori edili o ristrutturazioni. Rimuoviamo polvere, residui e sporco da cantiere per riconsegnare spazi puliti e pronti all\'uso.',
         punti: [
             'Pulizia profonda di pavimenti e superfici',
             'Trattamento vetri, infissi e serramenti',
@@ -71,7 +72,7 @@ const servizi = [
     },
     {
         tab: 'Garage',
-        icon: '🚗',
+        icon: <FaCar size={16} className="text-celeste" />,
         titolo: 'Garage e aree esterne',
         desc: 'Pulizia di garage, parcheggi coperti e spazi esterni con attrezzature professionali adatte a superfici ad alto utilizzo.',
         punti: [
@@ -92,7 +93,7 @@ export default function ServiziTabs() {
         <div>
             {/* Tab bar — scroll orizzontale su mobile */}
             <div className="overflow-x-auto pb-1 -mx-6 px-6">
-                <div className="flex gap-2 w-max min-w-full">
+                <div className="flex gap-2 w-max">
                     {servizi.map((item, i) => (
                         <button
                             key={item.tab}
@@ -119,7 +120,6 @@ export default function ServiziTabs() {
 
                     {/* Testo */}
                     <div className="p-10 flex flex-col justify-center order-2 md:order-1">
-                        <div className="text-4xl mb-4">{s.icon}</div>
                         <h3 className="font-heading text-blu text-2xl mb-4 leading-tight">{s.titolo}</h3>
                         <p className="font-body font-light text-site-gray text-sm leading-relaxed mb-6">{s.desc}</p>
                         <ul className="flex flex-col gap-2.5">
