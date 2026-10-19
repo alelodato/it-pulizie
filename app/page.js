@@ -4,6 +4,7 @@ import PreventivoForm from '@/components/PreventivoForm'
 import ServiziTabs from '@/components/ServiziTabs'
 import Image from 'next/image'
 import TopBar from '@/components/TopBar'
+import DistingueAccordion from '@/components/DistingueAccordion'
 import { FaLinkedin, FaInstagram, FaWhatsapp } from 'react-icons/fa'
 
 const servizi = [
@@ -18,15 +19,18 @@ const servizi = [
 const distingue = [
   {
     titolo: 'Pianificazione su misura',
-    desc: 'Ogni intervento viene definito in base alle caratteristiche dello stabile, alle frequenze necessarie e alle esigenze specifiche dell’ambiente.',
+    desc: 'Ogni intervento viene definito in base alle caratteristiche dello stabile, alle frequenze necessarie e alle esigenze specifiche dell\'ambiente.',
+    img: '/distingue-1.jpg',
   },
   {
     titolo: 'Attrezzature professionali',
     desc: 'Utilizziamo prodotti e macchinari professionali selezionati in base alle superfici e al tipo di intervento da eseguire.',
+    img: '/distingue-2.jpg',
   },
   {
     titolo: 'Personale formato',
     desc: 'Il nostro staff opera con metodo, precisione e continuità, adattandosi a contesti diversi con un approccio pratico e organizzato.',
+    img: '/distingue-3.jpg',
   },
 ]
 
@@ -66,7 +70,7 @@ export default function Home() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-black/75" />
+          <div className="absolute inset-0 bg-black/55" />
         </div>
 
         <TopBar />
@@ -87,7 +91,7 @@ export default function Home() {
 
             <a
               href="#preventivo"
-              className="inline-block bg-blu text-white font-body font-semibold text-sm tracking-[0.05em] uppercase px-9 py-4 rounded-full shadow-[0_8px_24px_rgba(26,63,111,0.25)] hover:bg-celeste hover:shadow-[0_8px_28px_rgba(77,184,212,0.4)] hover:-translate-y-0.5 transition-all duration-300"
+              className="inline-block text-center bg-blu text-white font-body font-semibold text-sm tracking-[0.05em] uppercase px-9 py-4 rounded-full shadow-[0_8px_24px_rgba(26,63,111,0.25)] hover:bg-celeste hover:shadow-[0_8px_28px_rgba(77,184,212,0.4)] hover:-translate-y-0.5 transition-all duration-300"
             >
               Richiedi una valutazione gratuita
             </a>
@@ -141,6 +145,16 @@ export default function Home() {
                 <p className="font-body font-light text-white leading-relaxed">
                   Il nostro obiettivo è semplice: offrire ambienti puliti, curati e accoglienti, attraverso un lavoro preciso e svolto con continuità.
                 </p>
+                {/* Immagine spezzatesto — solo mobile */}
+                <div className="md:hidden rounded-2xl overflow-hidden">
+                  <Image
+                    src="/chi-siamo-mobile.jpg"
+                    alt="I.T. Pulizie al lavoro"
+                    width={600}
+                    height={400}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
                 <p className="font-body font-light text-white leading-relaxed">
                   IT Pulizie offre servizi di pulizia professionale per condomini, uffici e ambienti civili.
                   Gestiamo interventi programmati con continuità, mantenendo gli spazi ordinati, puliti e curati nel tempo.
@@ -150,7 +164,8 @@ export default function Home() {
                   Disponibili per sopralluogo e valutazione senza impegno.
                 </p>
 
-                <div className="flex flex-col gap-6 mt-4">
+                {/* Desktop — lista normale */}
+                <div className="hidden md:flex flex-col gap-6 mt-4">
                   {distingue.map(({ titolo, desc }) => (
                     <div key={titolo} className="border-l-[3px] border-celeste pl-5">
                       <strong className="font-heading text-white block mb-1 text-base">{titolo}</strong>
@@ -158,6 +173,9 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
+
+                {/* Mobile — accordion */}
+                <DistingueAccordion distingue={distingue} />
               </div>
 
             </div>
