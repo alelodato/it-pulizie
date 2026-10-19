@@ -15,7 +15,7 @@ const servizi = [
             'Cura delle aree comuni interne ed esterne',
             'Controllo costante delle condizioni generali',
         ],
-        img: '/condomini.webp',
+        img: '/condomini.jpg',
     },
     {
         tab: 'Uffici',

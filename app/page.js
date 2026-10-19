@@ -3,6 +3,8 @@ import RevealWrapper from '@/components/RevealWrapper'
 import PreventivoForm from '@/components/PreventivoForm'
 import ServiziTabs from '@/components/ServiziTabs'
 import Image from 'next/image'
+import TopBar from '@/components/TopBar'
+import { FaLinkedin, FaInstagram, FaWhatsapp } from 'react-icons/fa'
 
 const servizi = [
   { icon: '🏢', titolo: 'Condomini', desc: 'Pulizia e manutenzione condominiale, scale, ingressi e aree condominiali con interventi programmati e costanti.' },
@@ -29,7 +31,7 @@ const distingue = [
 ]
 
 const contatti = [
-  { icon: '📞', label: 'Telefono', value: '+39 333 7382823' },
+  { icon: '📞', label: 'Telefono', value: ['+39 333 7382823', '+39 338 1569737'] },
   { icon: '✉️', label: 'Email', value: 'itpulizie.info@gmail.com' },
 ]
 
@@ -42,115 +44,50 @@ export default function Home() {
       <section
         id="home"
         className="relative flex flex-col overflow-hidden"
-        style={{ background: 'linear-gradient(160deg, #dff3fa 0%, #b6e3f0 40%, #e8f7fc 100%)' }}
       >
-        {/* Top bar */}
-        <div className="relative z-10 w-full bg-blu">
-          <div className="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between">
-
-            {/* Mobile: telefono + zona */}
-            <div className="flex sm:hidden items-center justify-between w-full">
-              <a
-                href="tel:+393337382823"
-                className="flex items-center gap-2 font-heading text-[0.68rem] tracking-[0.1em] uppercase text-white/80 hover:text-celeste transition-colors"
-              >
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-                </svg>
-                +39 333 7382823
-              </a>
-              <span className="flex items-center gap-2 font-heading text-[0.68rem] tracking-[0.1em] uppercase text-white/80">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                Roma e Provincia
-              </span>
-            </div>
-
-            {/* Desktop: contatti + social */}
-            <div className="hidden sm:flex items-center justify-center w-full gap-6">
-              <a
-                href="tel:+393337382823"
-                className="flex items-center gap-2 font-heading text-[0.68rem] tracking-[0.1em] uppercase text-white/80 hover:text-celeste transition-colors"
-              >
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-                </svg>
-                +39 333 7382823
-              </a>
-              <a
-                href="mailto:itpulizie.info@gmail.com"
-                className="flex items-center gap-2 font-heading text-[0.68rem] tracking-[0.1em] uppercase text-white/80 hover:text-celeste transition-colors"
-              >
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect width="20" height="16" x="2" y="4" rx="2" />
-                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                </svg>
-                itpulizie.info@gmail.com
-              </a>
-              <span className="flex items-center gap-2 font-heading text-[0.68rem] tracking-[0.1em] uppercase text-white/80">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                Pomezia (RM)
-              </span>
-              <div className="w-px h-4 bg-white/20" />
-              <a href="https://www.linkedin.com/in/i-t-pulizie-475530412/" target="_blank" rel="noopener noreferrer" className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-white/80 hover:bg-celeste hover:text-white transition-all duration-300" aria-label="Linkedin">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                  <rect width="4" height="12" x="2" y="9" />
-                  <circle cx="4" cy="4" r="2" />
-                </svg>
-              </a>
-              <a href="https://www.instagram.com/it_pulizie?igsh=aGducXBoaWNrZW51" target="_blank" rel="noopener noreferrer" className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-white/80 hover:bg-celeste hover:text-white transition-all duration-300" aria-label="Instagram">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg>
-              </a>
-              <a href="https://wa.me/393337382823" target="_blank" rel="noopener noreferrer" className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-white/80 hover:bg-celeste hover:text-white transition-all duration-300" aria-label="WhatsApp">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" /></svg>
-              </a>
-            </div>
-
-          </div>
+        {/* Background image desktop */}
+        <div className="hidden md:block absolute inset-0">
+          <Image
+            src="/hero-desktop.jpg"
+            alt="I.T. Pulizie"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/55" />
         </div>
 
-        {/* Onde SVG */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <svg className="wave-animate absolute bottom-[-20px] w-[200%] opacity-35" viewBox="0 0 1440 200" xmlns="http://www.w3.org/2000/svg">
-            <path fill="#4db8d4" d="M0,80 C240,140 480,20 720,80 C960,140 1200,20 1440,80 L1440,200 L0,200 Z" />
-            <path fill="#1a3f6f" fillOpacity="0.15" d="M0,120 C300,60 600,160 900,100 C1100,60 1300,140 1440,100 L1440,200 L0,200 Z" />
-          </svg>
-          <svg className="wave-animate-slow absolute bottom-0 w-[200%] opacity-20" viewBox="0 0 1440 200" xmlns="http://www.w3.org/2000/svg">
-            <path fill="#a8dce9" d="M0,60 C360,120 720,0 1080,80 C1260,120 1380,40 1440,60 L1440,200 L0,200 Z" />
-          </svg>
+        {/* Background image mobile */}
+        <div className="block md:hidden absolute inset-0">
+          <Image
+            src="/hero-mobile.jpg"
+            alt="I.T. Pulizie"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/75" />
         </div>
+
+        <TopBar />
 
         {/* Contenuto */}
-        <div className="relative z-10 flex-1 flex items-center justify-center text-center px-6 py-16 fade-up">
+        <div className="relative z-10 flex-1 flex md:items-center md:justify-start items-end justify-start text-left px-6 md:px-16 md:py-16 pt-4 pb-10 min-h-[80vh] md:min-h-0 fade-up">
           <div>
-            <div className="inline-flex items-center gap-3 mb-4">
-              <img
-                src="/it-pulizie-logo.png"
-                alt="I.T. Pulizie logo"
-                className="h-48 w-auto"
-              />
-            </div>
-
-            <h1 className="font-heading text-blu leading-[1.1] mb-4" style={{ fontSize: 'clamp(1.8rem, 4.5vw, 3.6rem)' }}>
+            <h1 className="font-heading text-white leading-[1.1] mb-4" style={{ fontSize: 'clamp(1.8rem, 4.5vw, 3.6rem)' }}>
               Pulizia professionale<br />
               per<span className="text-celeste"> condomini</span>,<br />
               <span className="text-celeste">uffici</span> e <span className="text-celeste">ambienti civili</span>.
             </h1>
 
-            <p className="font-body font-light text-site-gray text-base max-w-md mx-auto mb-8 leading-relaxed">
+            <p className="font-body font-light text-white/80 text-base max-w-md mb-8 leading-relaxed">
               Interventi programmati, attrezzature professionali e un servizio costruito
               sulle esigenze reali del tuo spazio. Operiamo in tutta la provincia di Roma.
             </p>
 
             <a
               href="#preventivo"
-              className="inline-block bg-blu text-white font-heading text-sm tracking-[0.1em] uppercase px-9 py-4 rounded-full shadow-[0_8px_24px_rgba(26,63,111,0.25)] hover:bg-celeste hover:shadow-[0_8px_28px_rgba(77,184,212,0.4)] hover:-translate-y-0.5 transition-all duration-300"
+              className="inline-block bg-blu text-white font-body font-semibold text-sm tracking-[0.05em] uppercase px-9 py-4 rounded-full shadow-[0_8px_24px_rgba(26,63,111,0.25)] hover:bg-celeste hover:shadow-[0_8px_28px_rgba(77,184,212,0.4)] hover:-translate-y-0.5 transition-all duration-300"
             >
               Richiedi una valutazione gratuita
             </a>
@@ -163,7 +100,7 @@ export default function Home() {
         {/* Background image */}
         <div className="absolute inset-0">
           <Image
-            src="/bg-1.webp"
+            src="/bg-3.jpg"
             alt=""
             fill
             className="object-cover"
@@ -173,13 +110,38 @@ export default function Home() {
 
         <RevealWrapper>
           <section id="chi-siamo" className="relative z-10 max-w-5xl mx-auto px-6 py-24">
+            <p className="font-heading text-[0.72rem] tracking-[0.2em] uppercase text-celeste mb-3">Chi siamo</p>
+            <h2 className="font-heading text-white leading-tight mb-10" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}>
+              Una struttura stabile,<br />un servizio costante.
+            </h2>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
-              <div>
-                <p className="font-heading text-[0.72rem] tracking-[0.2em] uppercase text-celeste mb-3">Chi siamo</p>
-                <h2 className="font-heading text-white leading-tight mb-5" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}>
-                  Una struttura stabile,<br />un servizio costante.
-                </h2>
-                <p className="font-body font-light text-white leading-relaxed mb-4">
+
+              {/* Sinistra — foto */}
+              <div className="flex flex-col gap-2">
+                <div className="relative w-full rounded-2xl overflow-hidden">
+                  <Image
+                    src="/ivan-tiziano.jpg"
+                    alt="Ivan e Tiziano Scrofani"
+                    width={600}
+                    height={700}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+                <p className="font-heading text-white/60 text-xs tracking-[0.15em] uppercase">
+                  Ivan e Tiziano Scrofani
+                </p>
+              </div>
+
+              {/* Destra — testo + distingue */}
+              <div className="flex flex-col gap-6">
+                <p className="font-body font-light text-white leading-relaxed">
+                  Siamo un'impresa di pulizie professionali che opera con serietà e attenzione, offrendo servizi per condomini, uffici, attività commerciali, autorimesse e aree verdi.
+                </p>
+                <p className="font-body font-light text-white leading-relaxed">
+                  Il nostro obiettivo è semplice: offrire ambienti puliti, curati e accoglienti, attraverso un lavoro preciso e svolto con continuità.
+                </p>
+                <p className="font-body font-light text-white leading-relaxed">
                   IT Pulizie offre servizi di pulizia professionale per condomini, uffici e ambienti civili.
                   Gestiamo interventi programmati con continuità, mantenendo gli spazi ordinati, puliti e curati nel tempo.
                   Ogni servizio viene organizzato in base alle reali esigenze dello stabile, con attenzione alla puntualità, alla gestione operativa e alla qualità del risultato.
@@ -187,16 +149,17 @@ export default function Home() {
                 <p className="font-body font-light text-white/75 leading-relaxed">
                   Disponibili per sopralluogo e valutazione senza impegno.
                 </p>
+
+                <div className="flex flex-col gap-6 mt-4">
+                  {distingue.map(({ titolo, desc }) => (
+                    <div key={titolo} className="border-l-[3px] border-celeste pl-5">
+                      <strong className="font-heading text-white block mb-1 text-base">{titolo}</strong>
+                      <span className="font-body font-light text-white/70 text-sm leading-relaxed">{desc}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              <div className="flex flex-col gap-6">
-                {distingue.map(({ titolo, desc }) => (
-                  <div key={titolo} className="border-l-[3px] border-celeste pl-5">
-                    <strong className="font-heading text-white block mb-1 text-base">{titolo}</strong>
-                    <span className="font-body font-light text-white/70 text-sm leading-relaxed">{desc}</span>
-                  </div>
-                ))}
-              </div>
             </div>
           </section>
         </RevealWrapper>
@@ -218,7 +181,7 @@ export default function Home() {
         {/* Background image desktop */}
         <div className="absolute inset-0 hidden sm:block">
           <Image
-            src="/bg-2.webp"
+            src="/bg-2.jpg"
             alt=""
             fill
             className="object-cover"
@@ -229,7 +192,7 @@ export default function Home() {
         {/* Background image mobile */}
         <div className="absolute inset-0 block sm:hidden">
           <Image
-            src="/bg-2-mb.webp"
+            src="/bg-2-mb.jpg"
             alt=""
             fill
             className="object-cover"
@@ -304,7 +267,12 @@ export default function Home() {
                   <strong className="font-heading text-[0.72rem] tracking-[0.1em] uppercase text-celeste block mb-0.5">
                     {label}
                   </strong>
-                  <span className="font-body text-site-gray text-sm">{value}</span>
+                  <span className="font-body text-site-gray text-sm flex flex-col">
+                    {Array.isArray(value)
+                      ? value.map((v, i) => <span key={i}>{v}</span>)
+                      : value
+                    }
+                  </span>
                 </div>
               </div>
             ))}
@@ -317,7 +285,7 @@ export default function Home() {
         {/* Background image */}
         <div className="absolute inset-0">
           <Image
-            src="/bg-3.webp"
+            src="/bg-3.jpg"
             alt=""
             fill
             className="object-cover"
@@ -373,6 +341,15 @@ export default function Home() {
                 +39 333 7382823
               </a>
               <a
+                href="tel:+393381569737"
+                className="flex items-center gap-2 font-heading text-[0.68rem] tracking-[0.1em] uppercase text-blu hover:text-celeste transition-colors"
+              >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                +39 338 1569737
+              </a>
+              <a
                 href="mailto:itpulizie.info@gmail.com"
                 className="flex items-center gap-2 font-heading text-[0.68rem] tracking-[0.1em] uppercase text-blu hover:text-celeste transition-colors"
               >
@@ -398,13 +375,9 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-full border border-celeste-light flex items-center justify-center text-blu hover:bg-celeste hover:border-celeste hover:text-white transition-all duration-300"
-                aria-label="Facebook"
+                aria-label="LinkedIn"
               >
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                  <rect width="4" height="12" x="2" y="9" />
-                  <circle cx="4" cy="4" r="2" />
-                </svg>
+                <FaLinkedin size={14} />
               </a>
               <a
                 href="https://www.instagram.com/it_pulizie?igsh=aGducXBoaWNrZW51"
@@ -413,11 +386,7 @@ export default function Home() {
                 className="w-8 h-8 rounded-full border border-celeste-light flex items-center justify-center text-blu hover:bg-celeste hover:border-celeste hover:text-white transition-all duration-300"
                 aria-label="Instagram"
               >
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                </svg>
+                <FaInstagram size={14} />
               </a>
               <a
                 href="https://wa.me/393337382823"
@@ -426,9 +395,7 @@ export default function Home() {
                 className="w-8 h-8 rounded-full border border-celeste-light flex items-center justify-center text-blu hover:bg-celeste hover:border-celeste hover:text-white transition-all duration-300"
                 aria-label="WhatsApp"
               >
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
-                </svg>
+                <FaWhatsapp size={14} />
               </a>
             </div>
           </div>
