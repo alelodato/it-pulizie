@@ -136,7 +136,7 @@ export default function Home() {
               {/* Destra — testo + distingue */}
               <div className="flex flex-col gap-6">
                 <p className="font-body font-light text-white leading-relaxed">
-                  Siamo un'impresa di pulizie professionali che opera con serietà e attenzione, offrendo servizi per condomini, uffici, attività commerciali, autorimesse e aree verdi.
+                  Siamo un&apos; impresa di pulizie professionali che opera con serietà e attenzione, offrendo servizi per condomini, uffici, attività commerciali, autorimesse e aree verdi.
                 </p>
                 <p className="font-body font-light text-white leading-relaxed">
                   Il nostro obiettivo è semplice: offrire ambienti puliti, curati e accoglienti, attraverso un lavoro preciso e svolto con continuità.
