@@ -95,7 +95,7 @@ export default function Home() {
               href="#preventivo"
               className="block text-center bg-blu text-white font-body font-semibold text-sm px-9 py-4 rounded-full shadow-[0_8px_24px_rgba(26,63,111,0.25)] hover:bg-celeste hover:shadow-[0_8px_28px_rgba(77,184,212,0.4)] hover:-translate-y-0.5 transition-all duration-300 max-w-xs mx-auto"
             >
-              Richiedi una valutazione gratuita
+              RICHIEDI UNA VALUTAZIONE GRATUITA
             </a>
           </div>
         </div>
@@ -149,7 +149,9 @@ export default function Home() {
                 </p>
                 <p className="font-body font-light text-white leading-relaxed">
                   I.T. Pulizie offre servizi di pulizia professionale per condomini, uffici e ambienti civili.
+                  <br />
                   Gestiamo interventi programmati con continuità, mantenendo gli spazi ordinati, puliti e curati nel tempo.
+                  <br />
                   Ogni servizio viene organizzato in base alle reali esigenze dello stabile, con attenzione alla puntualità, alla gestione operativa e alla qualità del risultato.
                 </p>
                 <p className="font-body font-light text-white/75 leading-relaxed">
@@ -159,7 +161,7 @@ export default function Home() {
                   href="#preventivo"
                   className="self-start inline-block text-center bg-celeste text-blu font-body font-semibold text-sm px-9 py-4 rounded-full shadow-[0_8px_24px_rgba(77,184,212,0.3)] hover:bg-white hover:-translate-y-0.5 transition-all duration-300 mt-2"
                 >
-                  Richiedi una valutazione gratuita
+                  RICHIEDI UNA VALUTAZIONE GRATUITA
                 </a>
               </div>
 
@@ -263,6 +265,7 @@ export default function Home() {
           </h2>
           <p className="font-body font-light text-site-gray leading-relaxed mb-10 max-w-lg">
             Siamo disponibili per valutare le esigenze dello stabile e organizzare un sopralluogo senza impegno.
+            <br />
             Ti risponderemo nel più breve tempo possibile con tutte le informazioni necessarie.
           </p>
           <div className="flex flex-wrap gap-9">
@@ -314,7 +317,9 @@ export default function Home() {
                 Entra nel nostro team.
               </h2>
               <p className="font-body font-light text-white/70 leading-relaxed mb-10">
-                Cerchiamo persone affidabili, precise e motivate. Se vuoi far parte di una realtà seria
+                Cerchiamo persone affidabili, precise e motivate.
+                <br />
+                Se vuoi far parte di una realtà seria
                 e strutturata, inviaci il tuo curriculum e ti contatteremo appena possibile.
               </p>
               <a
