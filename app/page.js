@@ -185,7 +185,7 @@ export default function Home() {
       </RevealWrapper>
 
       {/* COME LAVORIAMO */}
-      <div style={{ background: 'linear-gradient(170deg, #e5f6fb 0%, #f0fafd 100%)' }}>
+      <div className="bg-white">
         <RevealWrapper>
           <section id="come-lavoriamo" className="max-w-5xl mx-auto px-6 py-24">
             <p className="font-heading text-[0.72rem] tracking-[0.2em] uppercase text-celeste mb-3">
@@ -202,7 +202,7 @@ export default function Home() {
               {metodo.map(({ Icon, titolo, desc }, i) => (
                 <div
                   key={titolo}
-                  className="group relative bg-white rounded-2xl p-7 shadow-[0_4px_20px_rgba(26,63,111,0.07)] border-t-4 border-celeste-light hover:border-celeste hover:-translate-y-1.5 hover:shadow-[0_12px_32px_rgba(26,63,111,0.12)] transition-all duration-300"
+                  className="group relative bg-white rounded-2xl p-7 border border-celeste-light/50 border-t-4 border-t-celeste-light hover:border-t-celeste shadow-[0_4px_20px_rgba(26,63,111,0.06)] hover:-translate-y-1.5 hover:shadow-[0_12px_32px_rgba(26,63,111,0.12)] transition-all duration-300"
                 >
                   <span className="absolute top-5 right-6 font-heading text-3xl text-celeste-light group-hover:text-celeste transition-colors duration-300">
                     {'0' + (i + 1)}
