@@ -6,7 +6,6 @@ import Image from 'next/image'
 const photos = [
     'DSC05106.jpg',
     'DSC05114.jpg',
-    'DSC05108.jpg',
     'DSC05123.jpg',
     'DSC05121.jpg',
     'DSC05125.jpg',
@@ -20,20 +19,12 @@ const photos = [
     'DSC05149.jpg',
     'DSC05155.jpg',
     'DSC05158.jpg',
-    'DSC05162.jpg',
     'DSC05168.jpg',
     'DSC05177.jpg',
     'DSC05204.jpg',
     'DSC05207.jpg',
-    'DSC05209.jpg',
     'DSC05212.jpg',
-    'DSC05228.jpg',
-    'DSC05230.jpg',
-    'DSC05241.jpg',
-    'DSC05242.jpg',
-    'gallery10.jpg',
     'distingue-1.jpg',
-    'distingue-2.jpg',
     'distingue-3.jpg',
 ]
 
