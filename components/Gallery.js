@@ -1,6 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import Image from 'next/image'
 
 const photos = [
@@ -29,17 +30,95 @@ const photos = [
 ]
 
 export default function Gallery() {
-    const [selected, setSelected] = useState(null)
+    const [index, setIndex] = useState(null)
+    const isOpen = index !== null
 
-    const currentIndex = photos.indexOf(selected)
+    useEffect(() => {
+        if (!isOpen) return
 
-    function prev() {
-        setSelected(photos[(currentIndex - 1 + photos.length) % photos.length])
+        const html = document.documentElement
+        const body = document.body
+        html.style.overflow = 'hidden'
+        body.style.overflow = 'hidden'
+
+        function onKey(e) {
+            if (e.key === 'Escape') setIndex(null)
+            if (e.key === 'ArrowRight') setIndex((i) => (i + 1) % photos.length)
+            if (e.key === 'ArrowLeft') setIndex((i) => (i - 1 + photos.length) % photos.length)
+        }
+        window.addEventListener('keydown', onKey)
+
+        return () => {
+            html.style.overflow = ''
+            body.style.overflow = ''
+            window.removeEventListener('keydown', onKey)
+        }
+    }, [isOpen])
+
+    function close() {
+        setIndex(null)
     }
 
-    function next() {
-        setSelected(photos[(currentIndex + 1) % photos.length])
+    function prev(e) {
+        e.stopPropagation()
+        setIndex((i) => (i - 1 + photos.length) % photos.length)
     }
+
+    function next(e) {
+        e.stopPropagation()
+        setIndex((i) => (i + 1) % photos.length)
+    }
+
+    const lightbox = isOpen ? (
+        <div
+            className="fixed inset-0 z-[9999] bg-black/90 flex items-center justify-center overscroll-contain"
+            onClick={close}
+        >
+            {/* Chiudi */}
+            <button
+                className="absolute top-5 right-5 z-10 bg-white/10 hover:bg-white/20 text-white font-body text-sm px-4 py-2 rounded-full transition-colors"
+                onClick={close}
+            >
+                ✕ Chiudi
+            </button>
+
+            {/* Prev */}
+            <button
+                className="absolute left-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white text-2xl flex items-center justify-center transition-colors"
+                onClick={prev}
+                aria-label="Foto precedente"
+            >
+                ‹
+            </button>
+
+            {/* Immagine */}
+            <div className="w-full h-full flex items-center justify-center px-14 py-16">
+                <div className="relative w-full h-full" onClick={(e) => e.stopPropagation()}>
+                    <Image
+                        src={'/' + photos[index]}
+                        alt={'IT Pulizie foto ' + (index + 1)}
+                        fill
+                        sizes="100vw"
+                        className="object-contain"
+                    />
+                </div>
+            </div>
+
+            {/* Next */}
+            <button
+                className="absolute right-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white text-2xl flex items-center justify-center transition-colors"
+                onClick={next}
+                aria-label="Foto successiva"
+            >
+                ›
+            </button>
+
+            {/* Contatore */}
+            <div className="absolute bottom-5 left-1/2 -translate-x-1/2 text-white/60 font-body text-xs">
+                {index + 1} / {photos.length}
+            </div>
+        </div>
+    ) : null
 
     return (
         <>
@@ -47,13 +126,13 @@ export default function Gallery() {
             <div className="columns-2 sm:columns-3 lg:columns-4 gap-3 space-y-3">
                 {photos.map((photo, i) => (
                     <div
-                        key={i}
+                        key={photo}
                         className="break-inside-avoid cursor-pointer overflow-hidden rounded-xl group relative"
-                        onClick={() => setSelected(photo)}
+                        onClick={() => setIndex(i)}
                     >
                         <Image
-                            src={`/${photo}`}
-                            alt={`I.T. Pulizie – foto ${i + 1}`}
+                            src={'/' + photo}
+                            alt={'IT Pulizie foto ' + (i + 1)}
                             width={600}
                             height={400}
                             className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
@@ -63,50 +142,8 @@ export default function Gallery() {
                 ))}
             </div>
 
-            {/* Lightbox */}
-            {selected && (
-                <div
-                    className="fixed inset-0 z-[999] bg-black/90 flex items-center justify-center"
-                    style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}
-                    onClick={() => setSelected(null)}
-                >
-                    <button
-                        className="absolute top-5 right-5 text-white/70 hover:text-white font-body text-sm z-10"
-                        onClick={() => setSelected(null)}
-                    >
-                        ✕ Chiudi
-                    </button>
-
-                    <button
-                        className="absolute left-4 top-1/2 -translate-y-1/2 text-white/60 hover:text-white text-4xl px-2 z-10"
-                        onClick={e => { e.stopPropagation(); prev() }}
-                    >
-                        ‹
-                    </button>
-
-                    <div
-                        className="relative w-full h-full flex items-center justify-center px-12"
-                        onClick={e => e.stopPropagation()}
-                    >
-                        <div className="relative w-full h-full">
-                            <Image
-                                src={`/${selected}`}
-                                alt="Foto ingrandita"
-                                fill
-                                className="object-contain"
-                                sizes="100vw"
-                            />
-                        </div>
-                    </div>
-
-                    <button
-                        className="absolute right-4 top-1/2 -translate-y-1/2 text-white/60 hover:text-white text-4xl px-2 z-10"
-                        onClick={e => { e.stopPropagation(); next() }}
-                    >
-                        ›
-                    </button>
-                </div>
-            )}
+            {/* Lightbox renderizzato direttamente nel body */}
+            {isOpen && createPortal(lightbox, document.body)}
         </>
     )
 }
