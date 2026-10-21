@@ -66,38 +66,41 @@ export default function Gallery() {
             {/* Lightbox */}
             {selected && (
                 <div
-                    className="fixed inset-0 z-[999] bg-black/90 flex items-center justify-center p-4"
+                    className="fixed inset-0 z-[999] bg-black/90 flex items-center justify-center"
+                    style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}
                     onClick={() => setSelected(null)}
                 >
                     <button
-                        className="absolute top-5 right-5 text-white/70 hover:text-white font-body text-sm"
+                        className="absolute top-5 right-5 text-white/70 hover:text-white font-body text-sm z-10"
                         onClick={() => setSelected(null)}
                     >
                         ✕ Chiudi
                     </button>
 
                     <button
-                        className="absolute left-4 top-1/2 -translate-y-1/2 text-white/60 hover:text-white text-4xl px-2"
+                        className="absolute left-4 top-1/2 -translate-y-1/2 text-white/60 hover:text-white text-4xl px-2 z-10"
                         onClick={e => { e.stopPropagation(); prev() }}
                     >
                         ‹
                     </button>
 
                     <div
-                        className="relative max-w-4xl w-full max-h-[90vh]"
+                        className="relative w-full h-full flex items-center justify-center px-12"
                         onClick={e => e.stopPropagation()}
                     >
-                        <Image
-                            src={`/${selected}`}
-                            alt="Foto ingrandita"
-                            width={1200}
-                            height={800}
-                            className="w-full h-auto max-h-[85vh] object-contain rounded-xl"
-                        />
+                        <div className="relative w-full h-full">
+                            <Image
+                                src={`/${selected}`}
+                                alt="Foto ingrandita"
+                                fill
+                                className="object-contain"
+                                sizes="100vw"
+                            />
+                        </div>
                     </div>
 
                     <button
-                        className="absolute right-4 top-1/2 -translate-y-1/2 text-white/60 hover:text-white text-4xl px-2"
+                        className="absolute right-4 top-1/2 -translate-y-1/2 text-white/60 hover:text-white text-4xl px-2 z-10"
                         onClick={e => { e.stopPropagation(); next() }}
                     >
                         ›
