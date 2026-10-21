@@ -70,7 +70,7 @@ export default function Home() {
               <img
                 src="/it-pulizie-logo.png"
                 alt="I.T. Pulizie logo"
-                className="h-32 w-auto"
+                className="h-36 w-auto"
               />
             </div>
 
