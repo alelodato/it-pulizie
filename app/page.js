@@ -155,6 +155,12 @@ export default function Home() {
                 <p className="font-body font-light text-white/75 leading-relaxed">
                   Disponibili per sopralluogo e valutazione senza impegno.
                 </p>
+                <a
+                  href="#preventivo"
+                  className="self-start inline-block text-center bg-celeste text-blu font-body font-semibold text-sm px-9 py-4 rounded-full shadow-[0_8px_24px_rgba(77,184,212,0.3)] hover:bg-white hover:-translate-y-0.5 transition-all duration-300 mt-2"
+                >
+                  Richiedi una valutazione gratuita
+                </a>
               </div>
 
             </div>
@@ -299,23 +305,25 @@ export default function Home() {
         </div>
 
         <RevealWrapper>
-          <section id="lavora" className="relative z-10 max-w-5xl mx-auto px-6 py-24">
-            <p className="font-heading text-[0.72rem] tracking-[0.2em] uppercase text-celeste-light mb-3">
-              Lavora con noi
-            </p>
-            <h2 className="font-heading text-white leading-tight mb-5" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}>
-              Entra nel nostro team.
-            </h2>
-            <p className="font-body font-light text-white/70 leading-relaxed max-w-lg mb-10">
-              Cerchiamo persone affidabili, precise e motivate. Se vuoi far parte di una realtà seria
-              e strutturata, inviaci il tuo curriculum e ti contatteremo appena possibile.
-            </p>
-            <a
-              href="mailto:itpulizie.info@gmail.com"
-              className="inline-block bg-celeste text-blu font-heading text-sm tracking-[0.1em] uppercase px-9 py-4 rounded-full shadow-[0_8px_24px_rgba(77,184,212,0.3)] hover:bg-white transition-all duration-300 hover:-translate-y-0.5"
-            >
-              Manda il tuo CV →
-            </a>
+          <section id="lavora" className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-24 lg:flex lg:justify-end">
+            <div className="lg:max-w-md">
+              <p className="font-heading text-[0.72rem] tracking-[0.2em] uppercase text-celeste-light mb-3">
+                Lavora con noi
+              </p>
+              <h2 className="font-heading text-white leading-tight mb-5" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}>
+                Entra nel nostro team.
+              </h2>
+              <p className="font-body font-light text-white/70 leading-relaxed mb-10">
+                Cerchiamo persone affidabili, precise e motivate. Se vuoi far parte di una realtà seria
+                e strutturata, inviaci il tuo curriculum e ti contatteremo appena possibile.
+              </p>
+              <a
+                href="mailto:itpulizie.info@gmail.com"
+                className="inline-block bg-celeste text-blu font-heading text-sm tracking-[0.1em] uppercase px-9 py-4 rounded-full shadow-[0_8px_24px_rgba(77,184,212,0.3)] hover:bg-white transition-all duration-300 hover:-translate-y-0.5"
+              >
+                Manda il tuo CV →
+              </a>
+            </div>
           </section>
         </RevealWrapper>
       </div>
