@@ -6,6 +6,7 @@ const links = [
     { href: '#chi-siamo', label: 'Chi Siamo' },
     { href: '#servizi', label: 'Servizi' },
     { href: '#gallery', label: 'Gallery' },
+    { href: '#come-lavoriamo', label: 'Come lavoriamo' },
     { href: '#preventivo', label: 'Preventivo' },
     { href: '#contatti', label: 'Contatti' },
     { href: '#lavora', label: 'Lavora con Noi' },

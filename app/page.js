@@ -5,6 +5,7 @@ import ServiziTabs from '@/components/ServiziTabs'
 import Image from 'next/image'
 import TopBar from '@/components/TopBar'
 import Gallery from '@/components/Gallery'
+import { FaClipboardList, FaBroom, FaTools, FaUserCheck } from 'react-icons/fa'
 import { FaLinkedin, FaInstagram, FaWhatsapp } from 'react-icons/fa'
 
 const servizi = [
@@ -16,21 +17,26 @@ const servizi = [
   { icon: '🚗', titolo: 'Garage e Aree Esterne', desc: 'Pulizia di garage, parcheggi e spazi esterni con attrezzature e macchinari specifici.' },
 ]
 
-const distingue = [
+const metodo = [
   {
+    Icon: FaClipboardList,
     titolo: 'Pianificazione su misura',
-    desc: 'Ogni intervento viene definito in base alle caratteristiche dello stabile, alle frequenze necessarie e alle esigenze specifiche dell\'ambiente.',
-    img: '/distingue-1.jpg',
+    desc: "Ogni intervento viene definito in base alle caratteristiche dello stabile, alle frequenze necessarie e alle esigenze specifiche dell'ambiente.",
   },
   {
-    titolo: 'Attrezzature professionali',
+    Icon: FaBroom,
+    titolo: 'Pulizia mirata',
+    desc: 'Curiamo ogni dettaglio, dalle zone di passaggio alle superfici di uso quotidiano, per spazi puliti e in ordine in ogni angolo dello stabile.',
+  },
+  {
+    Icon: FaTools,
+    titolo: 'Prodotti e macchinari professionali',
     desc: 'Utilizziamo prodotti e macchinari professionali selezionati in base alle superfici e al tipo di intervento da eseguire.',
-    img: '/distingue-2.jpg',
   },
   {
-    titolo: 'Personale formato',
+    Icon: FaUserCheck,
+    titolo: 'Personale formato, controllo costante',
     desc: 'Il nostro staff opera con metodo, precisione e continuità, adattandosi a contesti diversi con un approccio pratico e organizzato.',
-    img: '/distingue-3.jpg',
   },
 ]
 
@@ -142,32 +148,13 @@ export default function Home() {
                   Il nostro obiettivo è semplice: offrire ambienti puliti, curati e accoglienti, attraverso un lavoro preciso e svolto con continuità.
                 </p>
                 <p className="font-body font-light text-white leading-relaxed">
-                  IT Pulizie offre servizi di pulizia professionale per condomini, uffici e ambienti civili.
+                  I.T. Pulizie offre servizi di pulizia professionale per condomini, uffici e ambienti civili.
                   Gestiamo interventi programmati con continuità, mantenendo gli spazi ordinati, puliti e curati nel tempo.
                   Ogni servizio viene organizzato in base alle reali esigenze dello stabile, con attenzione alla puntualità, alla gestione operativa e alla qualità del risultato.
                 </p>
                 <p className="font-body font-light text-white/75 leading-relaxed">
                   Disponibili per sopralluogo e valutazione senza impegno.
                 </p>
-
-                {/* Desktop — lista normale */}
-                <div className="hidden md:flex flex-col gap-6 mt-4">
-                  {distingue.map(({ titolo, desc }) => (
-                    <div key={titolo} className="border-l-[3px] border-celeste pl-5">
-                      <strong className="font-heading text-white block mb-1 text-base">{titolo}</strong>
-                      <span className="font-body font-light text-white/70 text-sm leading-relaxed">{desc}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="flex flex-col gap-6 mt-4">
-                  {distingue.map(({ titolo, desc }) => (
-                    <div key={titolo} className="border-l-[3px] border-celeste pl-5">
-                      <strong className="font-heading text-white block mb-1 text-base">{titolo}</strong>
-                      <span className="font-body font-light text-white/70 text-sm leading-relaxed">{desc}</span>
-                    </div>
-                  ))}
-                </div>
               </div>
 
             </div>
@@ -197,7 +184,45 @@ export default function Home() {
         </section>
       </RevealWrapper>
 
-      {/* COME LAVORIAMO + FORM */}
+      {/* COME LAVORIAMO */}
+      <div style={{ background: 'linear-gradient(170deg, #e5f6fb 0%, #f0fafd 100%)' }}>
+        <RevealWrapper>
+          <section id="come-lavoriamo" className="max-w-5xl mx-auto px-6 py-24">
+            <p className="font-heading text-[0.72rem] tracking-[0.2em] uppercase text-celeste mb-3">
+              Come lavoriamo
+            </p>
+            <h2 className="font-heading text-blu leading-tight mb-5" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}>
+              Metodo, precisione<br />e continuità.
+            </h2>
+            <p className="font-body font-light text-site-gray leading-relaxed max-w-2xl mb-14">
+              Ogni spazio ha esigenze diverse: per questo ogni servizio nasce da un sopralluogo e da un piano costruito su misura.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {metodo.map(({ Icon, titolo, desc }, i) => (
+                <div
+                  key={titolo}
+                  className="group relative bg-white rounded-2xl p-7 shadow-[0_4px_20px_rgba(26,63,111,0.07)] border-t-4 border-celeste-light hover:border-celeste hover:-translate-y-1.5 hover:shadow-[0_12px_32px_rgba(26,63,111,0.12)] transition-all duration-300"
+                >
+                  <span className="absolute top-5 right-6 font-heading text-3xl text-celeste-light group-hover:text-celeste transition-colors duration-300">
+                    {'0' + (i + 1)}
+                  </span>
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center text-white mb-6"
+                    style={{ background: 'linear-gradient(135deg, #4db8d4, #1a3f6f)' }}
+                  >
+                    <Icon size={20} />
+                  </div>
+                  <h3 className="font-heading text-blu text-lg leading-snug mb-3">{titolo}</h3>
+                  <p className="font-body font-light text-site-gray text-sm leading-relaxed">{desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        </RevealWrapper>
+      </div>
+
+      {/* FORM PREVENTIVO */}
       <div className="relative overflow-hidden">
         {/* Background image desktop */}
         <div className="absolute inset-0 hidden sm:block">
@@ -223,30 +248,6 @@ export default function Home() {
 
         <RevealWrapper>
           <section id="preventivo" className="relative z-10 max-w-5xl mx-auto px-6 py-24">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start mb-20">
-              <div>
-                <p className="font-heading text-[0.72rem] tracking-[0.2em] uppercase text-celeste mb-3">Come lavoriamo</p>
-                <h2 className="font-heading text-white leading-tight mb-5" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}>
-                  Metodo, precisione<br />e continuità.
-                </h2>
-              </div>
-              <ul className="flex flex-col gap-3 pt-2">
-                {[
-                  'Interventi programmati',
-                  'Pulizia mirata delle zone di passaggio e contatto',
-                  'Attenzione alle superfici più utilizzate durante la giornata',
-                  'Utilizzo di prodotti professionali adatti agli ambienti civili',
-                  'Macchinari specifici per spazi ampi o superfici esterne',
-                  'Controllo costante delle condizioni generali degli spazi',
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 font-body font-light text-white/75 text-sm leading-relaxed">
-                    <span className="text-celeste mt-0.5 flex-shrink-0">→</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
             {/* FORM */}
             <p className="font-heading text-[0.72rem] tracking-[0.2em] uppercase text-celeste mb-3 text-center">
               Preventivo gratuito
