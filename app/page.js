@@ -4,7 +4,7 @@ import PreventivoForm from '@/components/PreventivoForm'
 import ServiziTabs from '@/components/ServiziTabs'
 import Image from 'next/image'
 import TopBar from '@/components/TopBar'
-import DistingueAccordion from '@/components/DistingueAccordion'
+import Gallery from '@/components/Gallery'
 import { FaLinkedin, FaInstagram, FaWhatsapp } from 'react-icons/fa'
 
 const servizi = [
@@ -48,50 +48,46 @@ export default function Home() {
       <section
         id="home"
         className="relative flex flex-col overflow-hidden"
+        style={{ background: 'linear-gradient(160deg, #dff3fa 0%, #b6e3f0 40%, #e8f7fc 100%)' }}
       >
-        {/* Background image desktop */}
-        <div className="hidden md:block absolute inset-0">
-          <Image
-            src="/hero-desktop.jpg"
-            alt="I.T. Pulizie"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/55" />
-        </div>
-
-        {/* Background image mobile */}
-        <div className="block md:hidden absolute inset-0">
-          <Image
-            src="/hero-mobile.jpg"
-            alt="I.T. Pulizie"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/55" />
+        {/* Onde SVG */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <svg className="wave-animate absolute bottom-[-20px] w-[200%] opacity-35" viewBox="0 0 1440 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#4db8d4" d="M0,80 C240,140 480,20 720,80 C960,140 1200,20 1440,80 L1440,200 L0,200 Z" />
+            <path fill="#1a3f6f" fillOpacity="0.15" d="M0,120 C300,60 600,160 900,100 C1100,60 1300,140 1440,100 L1440,200 L0,200 Z" />
+          </svg>
+          <svg className="wave-animate-slow absolute bottom-0 w-[200%] opacity-20" viewBox="0 0 1440 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#a8dce9" d="M0,60 C360,120 720,0 1080,80 C1260,120 1380,40 1440,60 L1440,200 L0,200 Z" />
+          </svg>
         </div>
 
         <TopBar />
 
         {/* Contenuto */}
-        <div className="relative z-10 flex-1 flex md:items-center md:justify-start items-end justify-start text-left px-6 md:px-16 md:py-16 pt-4 pb-10 min-h-[80vh] md:min-h-0 fade-up">
+        <div className="relative z-10 flex-1 flex items-center justify-center text-center px-6 py-16 fade-up">
           <div>
-            <h1 className="font-heading text-white leading-[1.1] mb-4" style={{ fontSize: 'clamp(1.8rem, 4.5vw, 3.6rem)' }}>
+            <div className="inline-flex items-center gap-3 mb-4">
+              <img
+                src="/it-pulizie-logo.png"
+                alt="I.T. Pulizie logo"
+                className="h-32 w-auto"
+              />
+            </div>
+
+            <h1 className="font-heading text-blu leading-[1.1] mb-4" style={{ fontSize: 'clamp(1.8rem, 4.5vw, 3.6rem)' }}>
               Pulizia professionale<br />
               per<span className="text-celeste"> condomini</span>,<br />
               <span className="text-celeste">uffici</span> e <span className="text-celeste">ambienti civili</span>.
             </h1>
 
-            <p className="font-body font-light text-white/80 text-base max-w-md mb-8 leading-relaxed">
+            <p className="font-body font-light text-site-gray text-base max-w-md mx-auto mb-8 leading-relaxed">
               Interventi programmati, attrezzature professionali e un servizio costruito
               sulle esigenze reali del tuo spazio. Operiamo in tutta la provincia di Roma.
             </p>
 
             <a
               href="#preventivo"
-              className="inline-block text-center bg-blu text-white font-body font-semibold text-sm tracking-[0.05em] uppercase px-9 py-4 rounded-full shadow-[0_8px_24px_rgba(26,63,111,0.25)] hover:bg-celeste hover:shadow-[0_8px_28px_rgba(77,184,212,0.4)] hover:-translate-y-0.5 transition-all duration-300"
+              className="block text-center bg-blu text-white font-body font-semibold text-sm px-9 py-4 rounded-full shadow-[0_8px_24px_rgba(26,63,111,0.25)] hover:bg-celeste hover:shadow-[0_8px_28px_rgba(77,184,212,0.4)] hover:-translate-y-0.5 transition-all duration-300 max-w-xs mx-auto"
             >
               Richiedi una valutazione gratuita
             </a>
@@ -145,16 +141,6 @@ export default function Home() {
                 <p className="font-body font-light text-white leading-relaxed">
                   Il nostro obiettivo è semplice: offrire ambienti puliti, curati e accoglienti, attraverso un lavoro preciso e svolto con continuità.
                 </p>
-                {/* Immagine spezzatesto — solo mobile */}
-                <div className="md:hidden rounded-2xl overflow-hidden">
-                  <Image
-                    src="/chi-siamo-mobile.jpg"
-                    alt="I.T. Pulizie al lavoro"
-                    width={600}
-                    height={400}
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
                 <p className="font-body font-light text-white leading-relaxed">
                   IT Pulizie offre servizi di pulizia professionale per condomini, uffici e ambienti civili.
                   Gestiamo interventi programmati con continuità, mantenendo gli spazi ordinati, puliti e curati nel tempo.
@@ -174,8 +160,14 @@ export default function Home() {
                   ))}
                 </div>
 
-                {/* Mobile — accordion */}
-                <DistingueAccordion distingue={distingue} />
+                <div className="flex flex-col gap-6 mt-4">
+                  {distingue.map(({ titolo, desc }) => (
+                    <div key={titolo} className="border-l-[3px] border-celeste pl-5">
+                      <strong className="font-heading text-white block mb-1 text-base">{titolo}</strong>
+                      <span className="font-body font-light text-white/70 text-sm leading-relaxed">{desc}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
 
             </div>
@@ -191,6 +183,17 @@ export default function Home() {
             Cosa facciamo.
           </h2>
           <ServiziTabs />
+        </section>
+      </RevealWrapper>
+
+      {/* GALLERY */}
+      <RevealWrapper>
+        <section id="gallery" className="max-w-5xl mx-auto px-6 py-24">
+          <p className="font-heading text-[0.72rem] tracking-[0.2em] uppercase text-celeste mb-3">IT Pulizie</p>
+          <h2 className="font-heading text-blu leading-tight mb-12" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}>
+            Gallery
+          </h2>
+          <Gallery />
         </section>
       </RevealWrapper>
 
