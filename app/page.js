@@ -173,19 +173,8 @@ export default function Home() {
         </section>
       </RevealWrapper>
 
-      {/* GALLERY */}
-      <RevealWrapper>
-        <section id="gallery" className="max-w-5xl mx-auto px-6 py-24">
-          <p className="font-heading text-[0.72rem] tracking-[0.2em] uppercase text-celeste mb-3">IT Pulizie</p>
-          <h2 className="font-heading text-blu leading-tight mb-12" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}>
-            Gallery
-          </h2>
-          <Gallery />
-        </section>
-      </RevealWrapper>
-
       {/* COME LAVORIAMO */}
-      <div className="bg-white">
+      <div className="bg-site-white">
         <RevealWrapper>
           <section id="come-lavoriamo" className="max-w-5xl mx-auto px-6 py-24">
             <p className="font-heading text-[0.72rem] tracking-[0.2em] uppercase text-celeste mb-3">
@@ -202,19 +191,13 @@ export default function Home() {
               {metodo.map(({ Icon, titolo, desc }, i) => (
                 <div
                   key={titolo}
-                  className="group relative bg-white rounded-2xl p-7 border border-celeste-light/50 border-t-4 border-t-celeste-light hover:border-t-celeste shadow-[0_4px_20px_rgba(26,63,111,0.06)] hover:-translate-y-1.5 hover:shadow-[0_12px_32px_rgba(26,63,111,0.12)] transition-all duration-300"
+                  className="group relative bg-[#e5f6fb] rounded-2xl p-7 border border-blu border-t-4 shadow-[0_4px_20px_rgba(26,63,111,0.08)] hover:-translate-y-1.5 hover:shadow-[0_12px_32px_rgba(26,63,111,0.15)] transition-all duration-300"
                 >
-                  <span className="absolute top-5 right-6 font-heading text-3xl text-celeste-light group-hover:text-celeste transition-colors duration-300">
-                    {'0' + (i + 1)}
-                  </span>
-                  <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center text-white mb-6"
-                    style={{ background: 'linear-gradient(135deg, #4db8d4, #1a3f6f)' }}
-                  >
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-blu/10 text-blu mb-6">
                     <Icon size={20} />
                   </div>
                   <h3 className="font-heading text-blu text-lg leading-snug mb-3">{titolo}</h3>
-                  <p className="font-body font-light text-site-gray text-sm leading-relaxed">{desc}</p>
+                  <p className="font-body font-light text-blu text-sm leading-relaxed">{desc}</p>
                 </div>
               ))}
             </div>
@@ -336,6 +319,23 @@ export default function Home() {
           </section>
         </RevealWrapper>
       </div>
+
+      {/* GALLERY */}
+      <RevealWrapper>
+        <section id="gallery" className="py-24">
+          <div className="max-w-5xl mx-auto px-6 text-center">
+            <p className="font-heading text-[0.72rem] tracking-[0.2em] uppercase text-celeste mb-3">
+              I.T Pulizie
+            </p>
+            <h2 className="font-heading text-blu leading-tight mb-12" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}>
+              Gallery
+            </h2>
+          </div>
+          <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
+            <Gallery />
+          </div>
+        </section>
+      </RevealWrapper>
 
       {/* FOOTER */}
       <footer className="border-t border-celeste-light/40 px-6 py-10">

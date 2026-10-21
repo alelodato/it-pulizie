@@ -123,7 +123,7 @@ export default function Gallery() {
     return (
         <>
             {/* Grid masonry */}
-            <div className="columns-2 sm:columns-3 lg:columns-4 gap-3 space-y-3">
+            <div className="columns-2 sm:columns-3 lg:columns-5 xl:columns-6 gap-3 space-y-3">
                 {photos.map((photo, i) => (
                     <div
                         key={photo}
