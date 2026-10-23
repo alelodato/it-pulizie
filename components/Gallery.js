@@ -9,7 +9,6 @@ const photos = [
     'DSC05114.jpg',
     'DSC05123.jpg',
     'DSC05121.jpg',
-    'DSC05125.jpg',
     'DSC05126.jpg',
     'DSC05136.jpg',
     'DSC05140.jpg',
