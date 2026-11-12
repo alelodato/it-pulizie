@@ -1,4 +1,6 @@
 import './globals.css'
+import { GtmHead, GtmNoScript } from '@/components/consent/GtmScripts'
+import CookieBanner from '@/components/consent/CookieBanner'
 
 export const metadata = {
   metadataBase: new URL('https://www.itpulizie.it'),
@@ -74,8 +76,13 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Nunito:wght@300;400;600&display=swap"
           rel="stylesheet"
         />
+        <GtmHead />
       </head>
-      <body>{children}</body>
+      <body>
+        <GtmNoScript />
+        {children}
+        <CookieBanner />
+      </body>
     </html>
   )
 }
