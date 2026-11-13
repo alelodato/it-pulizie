@@ -13,7 +13,8 @@ Contenitore pronto da importare per la campagna Google Ads **Pulizie condominial
 
 | Evento | Quando | Parametri |
 |---|---|---|
-| `generate_lead` | invio del modulo sopralluogo riuscito | `form_name` = `sopralluogo_condomini`, `lead_role` (`amministratore`, `consigliere`, `condomino`, `altro`) |
+| `generate_lead` | invio riuscito del modulo sopralluogo della landing (`components/landing/SopralluogoForm.js`) | `form_name` = `sopralluogo_condomini`, `lead_role` (`amministratore`, `consigliere`, `condomino`, `altro`) |
+| `generate_lead` | invio riuscito del modulo preventivo della home (`components/PreventivoForm.js`) | `form_name` = `preventivo_home` (senza `lead_role`: il modulo della home non chiede il ruolo) |
 | `click_phone` | click su un link `tel:` della landing | `link_location` (`hero`, `contatti`, `header`, `footer`) |
 | `click_whatsapp` | click su un link WhatsApp della landing | `link_location` (`preventivo`, `contatti`, `header`, `footer`) |
 | `consent_choice` | scelta nel banner cookie | `consent_choice` (`accepted`, `rejected`) |
@@ -33,6 +34,12 @@ Contenitore pronto da importare per la campagna Google Ads **Pulizie condominial
 
 I tag Google rispettano in automatico Consent Mode: non serve aggiungere trigger di consenso.
 
+Il trigger `CE - generate_lead` non filtra su `form_name`: `GA4 - generate_lead` e `Ads - Lead modulo` partono
+per **entrambi i moduli** (landing e home). In Google Ads la conversione conta solo se il visitatore è arrivato da
+un annuncio; in GA4 i due moduli si distinguono con il parametro `form_name`. Per contare in Ads solo la landing,
+aggiungi al trigger la condizione `DLV - form_name` uguale a `sopralluogo_condomini`; per una conversione Ads
+separata per la home, crea una quarta conversione con un suo tag e un trigger filtrato su `preventivo_home`.
+
 Per controllare il file dopo una modifica: `npm run check:gtm`.
 
 ## Passi manuali
@@ -45,6 +52,9 @@ In **Obiettivi > Conversioni > Riepilogo > + Nuova azione di conversione > Sito 
 | Nome | Categoria | Obiettivo | Valore | Conteggio |
 |---|---|---|---|---|
 | Lead modulo sopralluogo | Invia modulo per i lead | **Principale** | (facoltativo) | **Una** |
+
+La conversione "Lead modulo sopralluogo" conta le richieste di entrambi i moduli del sito (landing e home),
+vedi la nota sul trigger `CE - generate_lead` qui sopra.
 | Click WhatsApp | Contatto | **Secondaria** | – | **Una** |
 | Click telefono | Contatto | **Secondaria** | – | **Una** |
 
@@ -86,8 +96,10 @@ contenitore (`GTM-XXXXXXX`) e fai un nuovo deploy: le variabili `NEXT_PUBLIC_` v
 2. Prima di accettare i cookie, in Tag Assistant > Consenso: tutto `Denied` tranne functionality e security
 3. Clicca **Accetta**: in Consenso ad e analytics diventano `Granted`
 4. Clicca il numero di telefono e il link WhatsApp: devono partire `GA4 - click_*` e `Ads - Click *`
-5. Invia il modulo con dati di prova: devono partire `GA4 - generate_lead` e `Ads - Lead modulo`.
-   La richiesta di prova arriva davvero via email, quindi avvisa la cliente.
+5. Invia il modulo della landing con dati di prova: devono partire `GA4 - generate_lead` e `Ads - Lead modulo`,
+   con `form_name` = `sopralluogo_condomini`. Ripeti con il modulo preventivo della home
+   (`https://www.itpulizie.it/#preventivo`): stessi tag, con `form_name` = `preventivo_home`.
+   Le richieste di prova arrivano davvero via email, quindi avvisa la cliente.
 6. Riapri "Preferenze cookie" dal footer, clicca **Rifiuta** e verifica il ritorno a `Denied`
 
 ### 6. Pubblicare
