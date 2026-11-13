@@ -1,7 +1,4 @@
-// BOZZA DA VALIDARE: testo di partenza redatto sui cookie effettivamente usati
-// (GTM, GA4, Google Ads, preferenza di consenso). Va verificato dalla titolare
-// o da un consulente privacy prima della pubblicazione e aggiornato se in GTM
-// vengono aggiunti altri strumenti.
+// Se in GTM vengono aggiunti altri strumenti, aggiornare le tabelle dei cookie.
 import LegalPage, { LegalH2 } from '@/components/legal/LegalPage'
 import CookiePreferencesLink from '@/components/consent/CookiePreferencesLink'
 
@@ -55,8 +52,8 @@ export default function CookiePolicy() {
   return (
     <LegalPage label="Informativa" title="Cookie policy." updated="novembre 2026">
       <p>
-        Questa pagina spiega quali cookie e strumenti simili usa il sito www.itpulizie.it, gestito da I.T. Pulizie,
-        Via Sofia, 10 – Pomezia (RM). Per il resto del trattamento dei dati vedi la{' '}
+        Questa pagina spiega quali cookie e strumenti simili usa il sito www.itpulizie.it, gestito da I.T. Pulizie di Ivan
+        Scrofani, Via Sofia, 10 – 00071 Pomezia (RM), Partita IVA IT17237381003. Per il resto del trattamento dei dati vedi la{' '}
         <a href="/privacy-policy" className={linkClass}>privacy policy</a>.
       </p>
 
