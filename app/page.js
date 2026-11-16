@@ -106,7 +106,7 @@ export default function Home() {
         {/* Background image */}
         <div className="absolute inset-0">
           <Image
-            src="/bg-3.jpg"
+            src="/bg-3.webp"
             alt=""
             fill
             className="object-cover"
@@ -127,7 +127,7 @@ export default function Home() {
               <div className="flex flex-col gap-2">
                 <div className="relative w-full rounded-2xl overflow-hidden">
                   <Image
-                    src="/ivan-tiziano.jpg"
+                    src="/ivan-tiziano.webp"
                     alt="Ivan e Tiziano Scrofani"
                     width={600}
                     height={700}
@@ -218,7 +218,7 @@ export default function Home() {
         {/* Background image desktop */}
         <div className="absolute inset-0 hidden sm:block">
           <Image
-            src="/bg-2.jpg"
+            src="/bg-2.webp"
             alt=""
             fill
             className="object-cover"
@@ -229,7 +229,7 @@ export default function Home() {
         {/* Background image mobile */}
         <div className="absolute inset-0 block sm:hidden">
           <Image
-            src="/bg-2-mb.jpg"
+            src="/bg-2-mb.webp"
             alt=""
             fill
             className="object-cover"
@@ -299,7 +299,7 @@ export default function Home() {
         {/* Background image */}
         <div className="absolute inset-0">
           <Image
-            src="/bg-3.jpg"
+            src="/bg-3.webp"
             alt=""
             fill
             className="object-cover"
