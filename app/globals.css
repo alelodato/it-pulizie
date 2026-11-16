@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  font-family: 'Nunito', sans-serif;
+  font-family: var(--font-nunito), 'Nunito', sans-serif;
   background: #f5fafd;
   color: #1a3f6f;
   overflow-x: hidden;
@@ -64,7 +64,7 @@ body {
   gap: 10px;
   text-decoration: none;
   color: #1a3f6f;
-  font-family: 'Hammersmith One', sans-serif;
+  font-family: var(--font-hammersmith), 'Hammersmith One', sans-serif;
   font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;

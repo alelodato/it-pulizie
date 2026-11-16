@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { FaLinkedin, FaInstagram, FaWhatsapp } from 'react-icons/fa'
 import CookiePreferencesLink from '@/components/consent/CookiePreferencesLink'
 
@@ -15,9 +16,11 @@ export default function SiteFooter() {
         <div className="flex flex-col sm:flex-row items-center sm:items-center justify-between gap-6">
 
           {/* Logo */}
-          <img
+          <Image
             src="/it-pulizie-logo2.png"
             alt="I.T. Pulizie"
+            width={192}
+            height={192}
             className="h-48 w-auto opacity-80"
           />
 

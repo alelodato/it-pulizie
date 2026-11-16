@@ -14,8 +14,8 @@ module.exports = {
         'site-gray': '#5a6e82',
       },
       fontFamily: {
-        heading: ['"Hammersmith One"', 'sans-serif'],
-        body: ['Nunito', 'sans-serif'],
+        heading: ['var(--font-hammersmith)', '"Hammersmith One"', 'sans-serif'],
+        body: ['var(--font-nunito)', 'Nunito', 'sans-serif'],
       },
     },
   },

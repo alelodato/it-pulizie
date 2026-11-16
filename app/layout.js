@@ -1,4 +1,5 @@
 import './globals.css'
+import { Hammersmith_One, Nunito } from 'next/font/google'
 import { GtmHead, GtmNoScript } from '@/components/consent/GtmScripts'
 import CookieBanner from '@/components/consent/CookieBanner'
 
@@ -68,14 +69,25 @@ export const metadata = {
   manifest: '/site.webmanifest',
 }
 
+// Font ospitati dal sito tramite next/font: niente richiesta a Google Fonts
+// che blocca il rendering. Stessi font e pesi di prima.
+const nunito = Nunito({
+  subsets: ['latin'],
+  weight: ['300', '400', '600'],
+  display: 'swap',
+  variable: '--font-nunito',
+})
+const hammersmith = Hammersmith_One({
+  subsets: ['latin'],
+  weight: '400',
+  display: 'swap',
+  variable: '--font-hammersmith',
+})
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="it">
+    <html lang="it" className={`${nunito.variable} ${hammersmith.variable}`}>
       <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Nunito:wght@300;400;600&display=swap"
-          rel="stylesheet"
-        />
         <GtmHead />
       </head>
       <body>

@@ -73,9 +73,12 @@ export default function Home() {
         <div className="relative z-10 flex-1 flex items-center justify-center text-center px-6 py-16 fade-up">
           <div>
             <div className="inline-flex items-center gap-3 mb-4">
-              <img
+              <Image
                 src="/it-pulizie-logo.png"
                 alt="I.T. Pulizie logo"
+                width={144}
+                height={144}
+                priority
                 className="h-36 w-auto"
               />
             </div>
@@ -109,6 +112,7 @@ export default function Home() {
             src="/bg-3.webp"
             alt=""
             fill
+            priority
             className="object-cover"
           />
           <div className="absolute inset-0 bg-black/85 md:bg-black/90" />
@@ -131,6 +135,7 @@ export default function Home() {
                     alt="Ivan e Tiziano Scrofani"
                     width={600}
                     height={700}
+                    sizes="(min-width: 768px) 460px, 100vw"
                     className="w-full h-auto object-cover"
                   />
                 </div>
