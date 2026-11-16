@@ -19,7 +19,18 @@ import TrackedLink from '@/components/landing/TrackedLink'
 import LinkClickTracker from '@/components/landing/LinkClickTracker'
 import SopralluogoForm from '@/components/landing/SopralluogoForm'
 
-const ZONE_SERVITE = ['EUR', 'Torrino', 'Mostacciano', 'Spinaceto', 'Laurentina', 'Cecchignola', "Tor de' Cenci"]
+const ZONE_SERVITE = [
+  'EUR',
+  'Laurentina',
+  'Torrino',
+  'Mostacciano',
+  'Spinaceto',
+  'Cecchignola',
+  'Vigna Murata',
+  'Fonte Meravigliosa',
+  "Tor de' Cenci",
+  'Trigoria',
+]
 
 const PHONE_MAIN = { label: '+39 333 7382823', href: 'tel:+393337382823' }
 const PHONE_ALT = { label: '+39 338 1569737', href: 'tel:+393381569737' }
@@ -28,9 +39,9 @@ const WHATSAPP_URL =
 const EMAIL = 'itpulizie.info@gmail.com'
 
 const PAGE_URL = 'https://www.itpulizie.it/pulizie-condominiali-roma-sud'
-const PAGE_TITLE = 'Pulizie Condominiali a Roma Sud ed EUR | I.T. Pulizie'
+const PAGE_TITLE = 'Pulizie Condominiali a Roma Sud | I.T. Pulizie'
 const PAGE_DESCRIPTION =
-  'Pulizie condominiali programmate a Roma Sud: EUR, Torrino, Mostacciano, Spinaceto, Laurentina. Personale fisso, referente diretto, canone mensile chiaro. Sopralluogo gratuito.'
+  'Pulizie condominiali programmate a Roma Sud: EUR, Laurentina, Torrino, Mostacciano, Spinaceto e quartieri vicini. Personale fisso, referente diretto, canone mensile chiaro. Sopralluogo gratuito.'
 
 export const metadata = {
   title: { absolute: PAGE_TITLE },
@@ -114,10 +125,13 @@ export default function PulizieCondominialiRomaSud() {
           <div className="fade-up min-w-0">
             <p className={labelClass}>Pulizie condominiali programmate</p>
             <h1 className="font-heading text-blu leading-[1.1] mb-5" style={{ fontSize: 'clamp(2rem, 5vw, 3.6rem)' }}>
-              Pulizie Condominiali a <span className="text-celeste">Roma Sud</span> ed <span className="text-celeste">EUR</span>.
+              Pulizie Condominiali a <span className="text-celeste">Roma Sud</span>.
             </h1>
-            <p className="font-body text-[#44596e] text-base sm:text-lg leading-relaxed max-w-xl mb-8">
+            <p className="font-body text-[#44596e] text-base sm:text-lg leading-relaxed max-w-xl mb-3">
               Servizi programmati con personale fisso, referente diretto e un piano costruito sulle esigenze del tuo condominio.
+            </p>
+            <p className="font-body font-semibold text-blu text-base leading-relaxed max-w-xl mb-8">
+              EUR, Laurentina, Torrino, Mostacciano e quartieri vicini.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8">
@@ -347,7 +361,7 @@ export default function PulizieCondominialiRomaSud() {
               <strong className={contactLabelClass}>Sede</strong>
               <span className="font-body text-blu block">Via Sofia, 10 – Pomezia (RM)</span>
               <span className="font-body text-sm text-[#5a6e82] block mt-1">
-                Operiamo in tutto il quadrante Roma Sud / EUR.
+                Operiamo in tutta Roma Sud.
               </span>
             </div>
           </div>

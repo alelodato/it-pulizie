@@ -1,6 +1,3 @@
-// BOZZA DA VALIDARE: testo di partenza redatto sui trattamenti effettivi del sito.
-// Prima della pubblicazione va verificato dalla titolare o da un consulente privacy
-// (dati societari completi, P.IVA, eventuali tempi di conservazione diversi).
 import LegalPage, { LegalH2 } from '@/components/legal/LegalPage'
 
 export const metadata = {
@@ -21,7 +18,8 @@ export default function PrivacyPolicy() {
 
       <LegalH2>Titolare del trattamento</LegalH2>
       <p>
-        I.T. Pulizie, Via Sofia, 10 – 00071 Pomezia (RM). Email:{' '}
+        I.T. Pulizie di Ivan Scrofani, Via Sofia, 10 – 00071 Pomezia (RM). Partita IVA IT17237381003.
+        Email per le richieste privacy:{' '}
         <a href="mailto:itpulizie.info@gmail.com" className={linkClass}>itpulizie.info@gmail.com</a>.
       </p>
 

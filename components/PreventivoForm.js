@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { pushEvent } from '@/lib/tracking'
 
 export default function PreventivoForm() {
     const [status, setStatus] = useState('idle')
@@ -17,6 +18,7 @@ export default function PreventivoForm() {
             })
             const json = await res.json()
             if (json.success) {
+                pushEvent('generate_lead', { form_name: 'preventivo_home' })
                 setStatus('success')
                 e.target.reset()
             } else {
