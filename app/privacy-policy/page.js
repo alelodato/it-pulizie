@@ -40,6 +40,11 @@ export default function PrivacyPolicy() {
           conversazioni se ci chiami, ci scrivi su WhatsApp o via email.
         </li>
         <li>
+          <strong className="text-blu">Statistiche aggregate delle visite (Vercel Web Analytics)</strong>: pagine visitate,
+          sito di provenienza, tipo di dispositivo e browser e paese, raccolti da Vercel Inc. in forma aggregata e anonima,
+          senza cookie né identificativi persistenti.
+        </li>
+        <li>
           <strong className="text-blu">Dati di navigazione e cookie</strong>: descritti nella{' '}
           <a href="/cookie-policy" className={linkClass}>cookie policy</a>.
         </li>
@@ -55,6 +60,10 @@ export default function PrivacyPolicy() {
           Misurare l&apos;efficacia del sito e delle campagne pubblicitarie (Google Analytics, Google Ads): solo con il
           tuo consenso (art. 6.1.a GDPR), revocabile in qualsiasi momento.
         </li>
+        <li>
+          Conoscere in forma aggregata e anonima l&apos;andamento delle visite (Vercel Web Analytics): legittimo interesse
+          del titolare a migliorare il sito (art. 6.1.f GDPR), senza cookie né identificativi persistenti.
+        </li>
         <li>Adempiere a obblighi di legge, ad esempio fiscali e contabili (art. 6.1.c GDPR).</li>
       </ul>
 
@@ -66,6 +75,7 @@ export default function PrivacyPolicy() {
       <ul className="list-disc pl-5 space-y-2">
         <li>Web3Forms, che inoltra al nostro indirizzo email i messaggi inviati con i moduli;</li>
         <li>il fornitore di hosting del sito;</li>
+        <li>Vercel Inc., per la misurazione aggregata delle visite senza cookie (Vercel Web Analytics);</li>
         <li>Google (Tag Manager, Analytics, Ads), solo se presti il consenso ai cookie di analisi e pubblicità;</li>
         <li>Google (Gmail) per la gestione della posta elettronica e Meta (WhatsApp) se ci contatti tramite WhatsApp.</li>
       </ul>

@@ -1,5 +1,6 @@
 import './globals.css'
 import { Hammersmith_One, Nunito } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
 import { GtmHead, GtmNoScript } from '@/components/consent/GtmScripts'
 import CookieBanner from '@/components/consent/CookieBanner'
 
@@ -84,6 +85,12 @@ const hammersmith = Hammersmith_One({
   variable: '--font-hammersmith',
 })
 
+// Layout radice: vale per tutte le pagine del sito, landing compresa.
+// - GtmHead: Consent Mode v2 (default denied, beforeInteractive) e poi GTM,
+//   una sola volta per pagina
+// - CookieBanner: un solo banner, scelta condivisa in localStorage 'itp_consent_v1'
+// - Analytics: Vercel Web Analytics, senza cookie né identificativi persistenti,
+//   quindi non subordinato al consenso
 export default function RootLayout({ children }) {
   return (
     <html lang="it" className={`${nunito.variable} ${hammersmith.variable}`}>
@@ -94,6 +101,7 @@ export default function RootLayout({ children }) {
         <GtmNoScript />
         {children}
         <CookieBanner />
+        <Analytics />
       </body>
     </html>
   )

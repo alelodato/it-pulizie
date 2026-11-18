@@ -16,6 +16,10 @@ const TECNICI = [
   ['itp_consent_v1', 'I.T. Pulizie (memoria locale del browser)', 'Ricorda la tua scelta sui cookie', 'Finché non la cancelli o cambi scelta'],
 ]
 
+const STATISTICHE_SENZA_COOKIE = [
+  ['Vercel Web Analytics', 'Vercel Inc.', 'Misurazione aggregata delle visite, senza cookie né identificativi persistenti', 'Nessun cookie salvato'],
+]
+
 const ANALISI_PUBBLICITA = [
   ['_ga, _ga_*', 'Google Analytics 4', 'Statistiche aggregate sulle visite e sulle richieste inviate', 'Fino a 2 anni'],
   ['_gcl_au, _gcl_aw, _gcl_gs', 'Google Ads (Linker conversioni)', "Collegano una richiesta all'annuncio da cui sei arrivato", 'Fino a 90 giorni'],
@@ -62,6 +66,14 @@ export default function CookiePolicy() {
         Sono necessari al funzionamento del sito e a ricordare la tua scelta sui cookie. Non richiedono consenso.
       </p>
       <CookieTable rows={TECNICI} />
+
+      <LegalH2>Statistiche senza cookie: Vercel Web Analytics</LegalH2>
+      <p>
+        Per conoscere in forma aggregata il numero di visite e le pagine più consultate usiamo Vercel Web Analytics,
+        fornito da Vercel Inc. Non salva cookie sul tuo dispositivo e non usa identificativi persistenti: i dati sono
+        anonimi e servono solo a statistiche complessive sul sito. Per questo è attivo anche senza consenso.
+      </p>
+      <CookieTable rows={STATISTICHE_SENZA_COOKIE} />
 
       <LegalH2>Cookie di analisi e pubblicità</LegalH2>
       <p>
