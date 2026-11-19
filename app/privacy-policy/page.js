@@ -45,6 +45,13 @@ export default function PrivacyPolicy() {
           senza cookie né identificativi persistenti.
         </li>
         <li>
+          <strong className="text-blu">Statistiche anonime di utilizzo</strong>: pagina visitata (senza parametri
+          dell&apos;indirizzo), categoria di provenienza (ad esempio annuncio Google, ricerca Google, accesso diretto,
+          social), tipo di dispositivo, percentuale di pagina scorsa, secondi di permanenza attiva e click su telefono,
+          WhatsApp, email o moduli. Ogni pagina aperta riceve un codice casuale che non viene salvato sul dispositivo e
+          cambia a ogni caricamento; indirizzo IP, user agent e cookie non vengono salvati.
+        </li>
+        <li>
           <strong className="text-blu">Dati di navigazione e cookie</strong>: descritti nella{' '}
           <a href="/cookie-policy" className={linkClass}>cookie policy</a>.
         </li>
@@ -64,6 +71,12 @@ export default function PrivacyPolicy() {
           Conoscere in forma aggregata e anonima l&apos;andamento delle visite (Vercel Web Analytics): legittimo interesse
           del titolare a migliorare il sito (art. 6.1.f GDPR), senza cookie né identificativi persistenti.
         </li>
+        <li>
+          Statistiche anonime di utilizzo delle pagine, per capire come vengono usati il sito e la pagina dedicata alle
+          campagne pubblicitarie: legittimo interesse del titolare a migliorare il sito e le proprie campagne
+          (art. 6.1.f GDPR). Puoi escludere le visite del tuo browser dalla pagina{' '}
+          <a href="/escludi-visite" className={linkClass}>Escludi le mie visite</a>.
+        </li>
         <li>Adempiere a obblighi di legge, ad esempio fiscali e contabili (art. 6.1.c GDPR).</li>
       </ul>
 
@@ -76,6 +89,7 @@ export default function PrivacyPolicy() {
         <li>Web3Forms, che inoltra al nostro indirizzo email i messaggi inviati con i moduli;</li>
         <li>il fornitore di hosting del sito;</li>
         <li>Vercel Inc., per la misurazione aggregata delle visite senza cookie (Vercel Web Analytics);</li>
+        <li>Supabase, che ospita i dati delle statistiche anonime di utilizzo in un data center nell&apos;Unione Europea;</li>
         <li>Google (Tag Manager, Analytics, Ads), solo se presti il consenso ai cookie di analisi e pubblicità;</li>
         <li>Google (Gmail) per la gestione della posta elettronica e Meta (WhatsApp) se ci contatti tramite WhatsApp.</li>
       </ul>
@@ -89,7 +103,8 @@ export default function PrivacyPolicy() {
       <p>
         I dati delle richieste di contatto sono conservati per il tempo necessario a gestirle e, se non segue un
         rapporto contrattuale, al massimo per 24 mesi. In caso di contratto, per la durata del rapporto e per i tempi
-        previsti dalla legge (10 anni per i documenti contabili). I tempi dei cookie sono indicati nella cookie policy.
+        previsti dalla legge (10 anni per i documenti contabili). I dati delle statistiche anonime di utilizzo sono
+        conservati al massimo 14 mesi. I tempi dei cookie sono indicati nella cookie policy.
       </p>
 
       <LegalH2>I tuoi diritti</LegalH2>

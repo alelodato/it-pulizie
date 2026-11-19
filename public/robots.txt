@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /statistiche
 
 Sitemap: https://www.itpulizie.it/sitemap.xml

@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { pushEvent } from '@/lib/tracking'
+import { hit } from '@/lib/visit-client'
 
 export default function PreventivoForm() {
     const [status, setStatus] = useState('idle')
@@ -35,7 +36,7 @@ export default function PreventivoForm() {
         'font-heading text-[0.68rem] tracking-[0.14em] uppercase text-blu mb-1 block'
 
     return (
-        <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <form onSubmit={handleSubmit} onFocusCapture={() => hit('form_start', 'preventivo')} className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <input type="hidden" name="access_key" value={process.env.NEXT_PUBLIC_WEB3FORMS_KEY} />
             <input type="hidden" name="subject" value="Nuova richiesta preventivo – I.T. Pulizie" />
 

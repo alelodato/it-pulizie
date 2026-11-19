@@ -3,6 +3,7 @@ import { Hammersmith_One, Nunito } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { GtmHead, GtmNoScript } from '@/components/consent/GtmScripts'
 import CookieBanner from '@/components/consent/CookieBanner'
+import VisitTracker from '@/components/analytics/VisitTracker'
 
 export const metadata = {
   metadataBase: new URL('https://www.itpulizie.it'),
@@ -91,6 +92,8 @@ const hammersmith = Hammersmith_One({
 // - CookieBanner: un solo banner, scelta condivisa in localStorage 'itp_consent_v1'
 // - Analytics: Vercel Web Analytics, senza cookie né identificativi persistenti,
 //   quindi non subordinato al consenso
+// - VisitTracker: statistiche anonime fatte in casa (Supabase), senza cookie né
+//   identificativi persistenti; rispetta solo il flag di esclusione 'itp_notrack'
 export default function RootLayout({ children }) {
   return (
     <html lang="it" className={`${nunito.variable} ${hammersmith.variable}`}>
@@ -101,6 +104,7 @@ export default function RootLayout({ children }) {
         <GtmNoScript />
         {children}
         <CookieBanner />
+        <VisitTracker />
         <Analytics />
       </body>
     </html>

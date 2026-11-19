@@ -75,6 +75,21 @@ export default function CookiePolicy() {
       </p>
       <CookieTable rows={STATISTICHE_SENZA_COOKIE} />
 
+      <LegalH2>Statistiche anonime di utilizzo</LegalH2>
+      <p>
+        Per capire in forma aggregata come vengono usate le pagine del sito (ad esempio quanto si scorre una pagina, per
+        quanti secondi resta aperta e se si clicca su telefono, WhatsApp o sul modulo di contatto) usiamo anche un sistema
+        di statistiche anonime realizzato per questo sito. Non salva cookie né altri identificativi sul tuo dispositivo:
+        ogni pagina aperta riceve un codice casuale che resta solo nella memoria del browser e si perde quando la pagina
+        viene chiusa o ricaricata. Indirizzo IP e user agent non vengono salvati. I dati sono conservati al massimo
+        14 mesi su Supabase, in un data center nell&apos;Unione Europea.
+      </p>
+      <p>
+        Puoi escludere le visite fatte dal tuo browser dalla pagina{' '}
+        <a href="/escludi-visite" className={linkClass}>Escludi le mie visite</a>: la scelta viene ricordata nella memoria
+        locale del browser (voce <code>itp_notrack</code>) solo se la attivi tu.
+      </p>
+
       <LegalH2>Cookie di analisi e pubblicità</LegalH2>
       <p>
         Vengono attivati <strong className="text-blu">solo se clicchi &quot;Accetta&quot;</strong> nel banner. Li usiamo per

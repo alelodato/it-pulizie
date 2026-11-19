@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { pushEvent } from '@/lib/tracking'
+import { hit } from '@/lib/visit-client'
 
 const ATTRIBUTION_PARAMS = ['gclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term']
 
@@ -94,7 +95,7 @@ export default function SopralluogoForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+    <form onSubmit={handleSubmit} onFocusCapture={() => hit('form_start', 'sopralluogo')} className="grid grid-cols-1 sm:grid-cols-2 gap-5">
       {/* Honeypot anti-spam: invisibile per le persone */}
       <input
         type="checkbox"
