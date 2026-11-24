@@ -10,7 +10,8 @@ const links = [
     { href: '/#come-lavoriamo', label: 'Come lavoriamo' },
     { href: '/#preventivo', label: 'Preventivo' },
     { href: '/#contatti', label: 'Contatti' },
-    { href: '/#lavora', label: 'Lavora con Noi' },
+    // Nascosta temporaneamente insieme alla sezione in app/page.js:
+    // { href: '/#lavora', label: 'Lavora con Noi' },
 ]
 
 export default function SideNav() {

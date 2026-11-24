@@ -299,9 +299,12 @@ export default function Home() {
         </section>
       </RevealWrapper>
 
-      {/* LAVORA CON NOI */}
+      {/* LAVORA CON NOI – sezione nascosta temporaneamente su richiesta del cliente
+          (troppe candidature). Per ripristinarla togli le due righe che aprono e chiudono
+          il commento qui sotto e riattiva la voce '/#lavora' in components/SideNav.js.
+          Il primo <div> interno contiene l'immagine di sfondo (bg-3.webp). */}
+      {/*
       <div className="relative overflow-hidden">
-        {/* Background image */}
         <div className="absolute inset-0">
           <Image
             src="/bg-3.webp"
@@ -337,6 +340,7 @@ export default function Home() {
           </section>
         </RevealWrapper>
       </div>
+      */}
 
       {/* GALLERY */}
       <RevealWrapper>
